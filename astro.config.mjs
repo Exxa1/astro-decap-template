@@ -6,7 +6,7 @@ import { SITE_URL } from "./src/data/config";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), sitemap()],
-  site: "https://exxa1.github.io/astro-decap-template",
+  site: SITE_URL,
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {
