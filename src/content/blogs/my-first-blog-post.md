@@ -2,6 +2,7 @@
 title: My first blog post
 description: 'Testing: blog page added, image optimization and datetime widget'
 publishedAt: 2025-11-02
+slug: firstblog
 isPublish: true
 isDraft: false
 ---
