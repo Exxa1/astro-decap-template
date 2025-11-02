@@ -20,7 +20,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: DateTime }
+      - { name: publishedAt, label: Date, widget: datetime }
       - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
       - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
@@ -33,7 +33,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: DateTime }
+      - { name: publishedAt, label: Date, widget: datetime, time_format: false }
       - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
       - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
