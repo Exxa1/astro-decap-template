@@ -20,7 +20,34 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: date }
+      - { name: publishedAt, label: Date, widget: DateTime }
       - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
       - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
+  - name: testblogs
+    label: Blogs
+    folder: src/content/blogs
+    create: true
+    format: frontmatter
+    preview_path: blogs/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: publishedAt, label: Date, widget: DateTime }
+      - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
+      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
+      - { name: body, label: Body, widget: markdown }
+      
+
+# source for optimizing images in sveltia cms: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#optimizing-images-for-upload
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image: # original format
+          format: webp # new format, only `webp` is supported
+          quality: 85 # default: 85
+          width: 2048 # default: original size
+          height: 2048 # default: original size
+        svg:
+          optimize: true
