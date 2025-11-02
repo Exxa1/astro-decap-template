@@ -21,7 +21,7 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <main class="post mx-auto flex w-full max-w-prose flex-col gap-4">
+  <main class="post mx-auto flex w-full max-w-prose flex-col gap-4 px-10 py-8 text-sm text-neutral-700 md:gap-8 md:py-16">
     <header role="presentation">
       <h1 class="text-md">
         {post.data.title} - {formatDate(post.data.publishedAt)}

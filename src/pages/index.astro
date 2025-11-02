@@ -15,68 +15,65 @@ const posts = await getCollection("posts");
 ---
 
 <Layout>
-  <main class="flex flex-col gap-20">
-    <article class="flex flex-col gap-8">
-      <h1 class="text-3xl text-neutral-100">{presentation.title}</h1>
-      <h2
-        class="max-w-[60ch] leading-6"
-        set:html={convertAsteriskToStrongTag(presentation.description)}
-      />
-      <SocialLinks />
-    </article>
+<main class="py-4 lg:py-10">
+  <!-- Az oldal alap paddingja -->
+  <div class="px-10 lg:px-20">
+    <!-- Hero -->
+    <div>
+      <div>
+        <h2 class="text-4xl text-green-900 font-semibold uppercase">1507.</h2>
+        <hr class="w-10 mt-3 h-px">
+        <h1 class="text-5xl text-black font-bold mt-4 mb-2 ">Árpád-házi Szent Margit Cserkészcsapat</h1>
+        <p class="text-xl text-gray-500 font-semibold">Magyarország legnagyobb vidéki csapata Szeged város szívében.</p>
+        <div class="mt-4">
+          <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Hírek</button></a>
+          <a href=""><button class="text-green-900 hover:text-white border text-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Kapcsolat</button></a>
+        </div>
+      </div>
+      <div class="mt-6 lg:mt-10">
+        <img src="csapat_foto_edited.JPG" alt="Csapatunk csoportképe" class="w-screen rounded-xl lg:rounded-3xl">
+      </div>
+    </div>
 
-    <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Latest posts</h3>
-        <Link href="/posts" label="See all posts" isUnderline target="_self" />
-      </header>
-      {posts.length === 0 && <p>Soon, stay connected 👀...</p>}
+    <!-- Hírek/Esenények -->
+    <div class="text-center text-2xl my-20 flex flex-col-reverse lg:flex lg:flex-row shadow-md shadow-[#e1642c] shadow rounded-3xl">
+      <div class="w-full lg:w-1/2 h-auto rounded-l-3xl">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043" style="border-width:0" frameborder="0" scrolling="no" class="w-full h-96 lg:h-[500px] rounded-b-3xl lg:rounded-l-3xl"></iframe>
+      </div>
+      <div class="w-full lg:w-1/2 p-10 rounded-t-3xl lg:rounded-r-3xl">
+        <h2 class="text-4xl font-bold text-[#e1642c] mb-4">Legfrissebb híreink</h2>
+      </div>
+    </div>
+  </div>
 
-      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-        {
-          posts.length !== 0 &&
-            posts
-              .slice(0, 2)
-              .map((post) => (
-                <PostCard
-                  publishedAt={post.data.publishedAt}
-                  title={post.data.title}
-                  description={post.data.description}
-                  slug={post.slug}
-                />
-              ))
-        }
-      </section>
-    </article>
+  <!-- Rólunk + Kapcsolat -->
+  <div class="w-auto flex-col lg:flex lg:flex-row py-10 lg:py-20">
+    <div class="hidden lg:block w-auto lg:w-1/2 h-[500px] bg-[url('/ors.jpg')] sm:rounded-xl lg:rounded-r-3xl bg-contain bg-no-repeat lg:bg-cover bg-center lg:shadow-md lg:shadow-[#e1642c]"></div>
+    <div><img src="/ors.jpg" alt="Kép a legjobb Őrsről" class="block lg:hidden w-auto h-auto"></div>
+    <div class="w-auto lg:w-1/2 p-10 lg:p-20">
+      <h2 class="text-4xl font-semibold text-[#e1642c]">Csapatunkról</h2>
+      <h3 class="text-2xl mt-10 mb-3">Csapatunk története</h3>
+      <p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laboriosam aspernatur, incidunt unde ut est, aliquid recusandae nam dolor nostrum laborum tempora facilis ea doloribus numquam autem consequuntur, culpa modi!</p>
+      <h3 class="text-2xl mt-10 mb-3">Kapcsolat</h3>
+      <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vero ullam ab eveniet fuga explicabo? </p>
+      <div class="mt-10">
+        <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Kapcsolat</button></a>
+        <a href=""><button class="text-green-900 hover:text-white border text-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Rólunk</button></a>
+      </div>
+    </div>
+  </div>
 
-    <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">
-          Selected projects ({projects.length})
-        </h3>
-      </header>
-      {projects.length === 0 && <p>Oops, I must work^^^^^</p>}
-
-      <section class="flex flex-col gap-4">
-        {
-          projects.length !== 0 &&
-            projects.map((project) => <ProjectCard {...project} />)
-        }
-      </section>
-    </article>
-
-    <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Get in touch</h3>
-      </header>
-      <p>
-        Email me at <Link
-          href={`mailto:${presentation.mail}`}
-          label={presentation.mail}
-        /> or follow me via my social links.
-      </p>
-
-      <SocialLinks />
-    </article>
-  </main>
+  <!-- Támogatás (Alap padding újra)-->
+  <div class="px-10 lg:px-20 my-0 lg:my-10 lg:my-20 lg:flex flex flex-col lg:flex-row lg:align-center">
+    <div class="w-full lg:w-1/2 p-4 lg:p-10">
+      <h2 class="text-4xl font-semibold text-[#e1642c] mb-4">Támogass minket!</h2>
+      <p class="text-lg my-4 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste corrupti, labore repellat explicabo quod in voluptate ipsam rerum veniam inventore. Repellendus aliquid est officia?</p>
+      <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Bővebben</button></a>	
+    </div>
+    <div class="w-auto flex place-self-center">
+      <img src="/1szaz.jpg" alt="" class="h-24 lg:h-52 w-auto rounded-xl lg:rounded-3xl shadow-xl ml-5">
+      <img src="/50.jpg" alt="" class="h-24 lg:h-52 w-auto rounded-xl lg:rounded-3xl shadow-xl ml-5">
+    </div>
+  </div>
+</main>
 </Layout>

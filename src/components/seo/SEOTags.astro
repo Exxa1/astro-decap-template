@@ -17,9 +17,9 @@ type Props = {
 
 const { title, description, noindex, og } = Astro.props;
 
-const DEFAULT_TITLE_PAGE = "Astro & decap CMS - starter";
+const DEFAULT_TITLE_PAGE = "1507 ASZMCSCS";
 const DEFAULT_DESCRIPTION_PAGE =
-  "A minimal starter built with Astro & Decap CMS and Tailwindcss.";
+  "Magyarország legnagyobb vidéki cserkészcsapata Szeged város szívében";
 const DEFAULT_URL_SITE = SITE_URL;
 
 const openGraph = {
@@ -33,6 +33,9 @@ const openGraph = {
 ---
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <SEO
     charset="UTF-8"
     title={title || DEFAULT_TITLE_PAGE}
@@ -53,7 +56,7 @@ const openGraph = {
     }}
     extend={{
       link: [
-        { rel: "icon", href: "/favicon.svg" },
+        { rel: "icon", href: "/logo.png" },
         { rel: "sitemap", href: "/sitemap-index.xml" },
       ],
       meta: [
