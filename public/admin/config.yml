@@ -32,7 +32,7 @@ collections:
     files:
       - name: rolunk
         label: About Us (Rolunk)
-        file: src/pages/rolunk/rolunk.md
+        file: src/pages/rolunk/index.md
         format: frontmatter
         fields:
           - { name: title, label: Title }

@@ -1,7 +1,7 @@
 ---
 title: About Us
 description: About our company
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/BasicMarkdown.astro
 ---
 
 Your content here...
