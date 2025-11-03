@@ -1,3 +1,17 @@
+# Használat
+
+- Ha a weboldal linkje változik, két helyen kell átírni a kódban:
+  - src/data/config.ts
+  - public/admin/config.yml
+
+
+## Pages that are only reachable by knowing the link
+
+I made a folder named secret and exculded pages going from there from sitemap in astro.config.mjs.
+This way it's possible to make pages that are only reachable if you know the link.
+Keep in mind to keep in the header of those pages: <meta name="robots" content="noindex"> so nice robots don't crawl them.
+
+
 # 👨‍🚀 Astro & decap (netlify) CMS - Portfolio Template
 
 ![Template](https://astro-decapcms-starter.netlify.app/opengraph-image.jpg)

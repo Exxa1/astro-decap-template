@@ -1,1 +1,15 @@
 auto-install-peers = true
+
+# Description by an LLM:
+#This is an npm (Node Package Manager) configuration file named .npmrc. The specific setting shown here is:
+
+#This configuration tells npm to automatically install peer dependencies when installing packages. A peer dependency is a dependency that a package needs but expects the consuming application to install.
+
+#When this setting is true:
+
+#npm will automatically install peer dependencies without requiring explicit installation
+#This can help avoid "unmet peer dependency" warnings
+#It saves developers time by not having to manually install peer dependencies
+#This is particularly useful in modern JavaScript/TypeScript projects (like this Astro project) where many packages have peer dependencies on common libraries like React, TypeScript, or other core dependencies.
+
+#Without this setting (or if set to false), you would need to manually install peer dependencies when npm warns you about them during package installation.

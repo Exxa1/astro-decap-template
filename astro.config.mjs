@@ -5,7 +5,10 @@ import { SITE_URL } from "./src/data/config";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(),
+                 sitemap({
+                  filter: (page) => page !== new URL('/secret/', SITE_URL).href
+                 })],
   site: SITE_URL,
   markdown: {
     syntaxHighlight: "shiki",

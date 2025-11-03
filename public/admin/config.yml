@@ -27,6 +27,21 @@ collections:
     media_folder: /public/images/posts
     public_folder: /images/posts
 
+  - name: pages
+    label: Pages
+    files:
+      - name: rolunk
+        label: About Us (Rolunk)
+        file: src/pages/rolunk/rolunk.md
+        format: frontmatter
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }
+          - { name: body, label: Content, widget: markdown }
+          - { name: layout, label: Layout, widget: hidden, default: "../../layouts/Layout.astro" }
+
+  
+
 # source for optimizing images in sveltia cms: https://github.com/sveltia/sveltia-cms?tab=readme-ov-file#optimizing-images-for-upload
 media_libraries:
   default:
