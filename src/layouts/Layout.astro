@@ -3,10 +3,9 @@ import Header from "../components/Header.astro";
 import SEOTags from "@/components/seo/SEOTags.astro";
 import Footer from "../components/Footer.astro";
 
-import "../styles/scrollbar.css";
+import '@/styles/global.css' 
+import "@/styles/scrollbar.css";
 import "@fontsource/open-sans";
-import "@/styles/tailwind.css";
-import "@/styles/post.css";
 
 export interface Props {
   title?: string;
