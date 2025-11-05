@@ -4,6 +4,19 @@
   - src/data/config.ts
   - public/admin/config.yml
 
+- Change the basic information in the src/data folder for a new webpage.
+- For different languages change the text for the not found page in the src/data/404.ts file.
+
+
+## Theming
+
+The color concept follows the tokenized approach, explained in this video:
+https://www.youtube.com/watch?v=GUupJJC5Ac4&t=284s
+
+To change the colors go to src/styles/tailwind_theme.css and read the comments there in the code
+
+The webpage uses the tailwind typography plugin to style the markdown. The colors follow the webpage colors specified in the tailwind_theme.css file (see above) but you can also specifically change them in the src/styles/markdown_typography_plugin_colors.css file.
+
 
 ## Pages that are only reachable by knowing the link
 

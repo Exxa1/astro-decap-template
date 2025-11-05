@@ -1,0 +1,106 @@
+@theme {
+  /* ============================================
+     PRIMITIVES (Color Definitions)
+     Following this technique: https://www.youtube.com/watch?v=GUupJJC5Ac4&t=284s
+     ============================================ */
+
+
+  /* With this command all the colors from tailwind default can be taken out so they don't show up as distraction when typing in a color */
+  --color-*: initial;
+
+  /* If the colors are not taken out you can use colors from tailwind and don't need to specify your own */
+  --color-green-mine: var(--color-green-300); /* disadvantage of not seeing the color */
+
+
+  /* Use this page to generate color palettes: https://uicolors.app/generate/738895 */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+
+
+  /* ============================================
+     DESIGN TOKENS - Light Mode (Default)
+     ============================================ */
+  
+  /* Text Tokens */
+  --color-colorfor-text-heading: var(--color-gray-900);
+  --color-colorfor-text-body: var(--color-gray-700);
+  --color-colorfor-text-secondary: var(--color-gray-600);
+  --color-colorfor-text-link: var(--color-blue-600);
+  --color-colorfor-text-button: var(--color-white);
+  --color-colorfor-text-nav: var(--color-gray-700);
+  
+  /* Background Tokens */
+  --color-colorfor-bg-page: var(--color-white);
+  --color-colorfor-bg-section: var(--color-gray-50);
+  --color-colorfor-bg-card: var(--color-white);
+  --color-colorfor-bg-header: var(--color-white);
+  --color-colorfor-bg-footer: var(--color-gray-900);
+  --color-colorfor-bg-button: var(--color-orange-500);
+  --color-colorfor-bg-button-hover: var(--color-orange-600);
+  
+  /* Border Tokens */
+  --color-colorfor-border-subtle: var(--color-gray-200);
+  --color-colorfor-border-input: var(--color-gray-300);
+  --color-colorfor-border-button: var(--color-orange-500);
+  
+  /* Accent Tokens */
+  --color-colorfor-accent-primary: var(--color-orange-500);
+  --color-colorfor-accent-secondary: var(--color-blue-500);
+}
+
+/* ============================================
+   DESIGN TOKENS - Dark Mode - can activate by adding 'dark' class to <html> element in Layout.astro
+   ============================================ */
+
+:root.dark {
+  /* Text Tokens */
+  --color-colorfor-text-heading: var(--color-white);
+  --color-colorfor-text-body: var(--color-gray-200);
+  --color-colorfor-text-secondary: var(--color-gray-300);
+  --color-colorfor-text-link: var(--color-blue-500);
+  --color-colorfor-text-button: var(--color-gray-900);
+  --color-colorfor-text-nav: var(--color-gray-200);
+  
+  /* Background Tokens */
+  --color-colorfor-bg-page: var(--color-gray-900);
+  --color-colorfor-bg-section: var(--color-gray-800);
+  --color-colorfor-bg-card: var(--color-gray-800);
+  --color-colorfor-bg-header: var(--color-gray-900);
+  --color-colorfor-bg-footer: var(--color-black);
+  --color-colorfor-bg-button: var(--color-orange-500);
+  --color-colorfor-bg-button-hover: var(--color-orange-600);
+  
+  /* Border Tokens */
+  --color-colorfor-border-subtle: var(--color-gray-700);
+  --color-colorfor-border-input: var(--color-gray-600);
+  --color-colorfor-border-button: var(--color-orange-500);
+  
+  /* Accent Tokens */
+  --color-colorfor-accent-primary: var(--color-orange-500);
+  --color-colorfor-accent-secondary: var(--color-blue-500);
+}
+
+/* ============================================
+   USAGE EXAMPLES
+   ============================================
+   
+   Use these classes in your HTML:
+   
+   - text-colorfor-text-body
+   ============================================ */

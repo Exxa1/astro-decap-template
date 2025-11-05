@@ -1,0 +1,21 @@
+
+@import "@/styles/tailwind_theme.css";
+
+@utility prose-website-colors {
+  --tw-prose-body: var(--color-colorfor-text-body);
+  --tw-prose-headings: var(--color-colorfor-text-heading);
+  --tw-prose-lead: var(--color-colorfor-text-secondary);
+  --tw-prose-links: var(--color-colorfor-text-link);
+  --tw-prose-bold: var(--color-colorfor-text-heading);
+  --tw-prose-counters: var(--color-colorfor-text-secondary);
+  --tw-prose-bullets: var(--color-colorfor-accent-primary);
+  --tw-prose-hr: var(--color-colorfor-border-subtle);
+  --tw-prose-quotes: var(--color-colorfor-text-heading);
+  --tw-prose-quote-borders: var(--color-colorfor-border-subtle);
+  --tw-prose-captions: var(--color-colorfor-text-secondary);
+  --tw-prose-code: var(--color-colorfor-text-heading);
+  --tw-prose-pre-code: var(--color-colorfor-text-body);
+  --tw-prose-pre-bg: var(--color-colorfor-bg-footer);
+  --tw-prose-th-borders: var(--color-colorfor-border-subtle);
+  --tw-prose-td-borders: var(--color-colorfor-border-subtle);
+}

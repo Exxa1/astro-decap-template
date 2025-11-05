@@ -1,1 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@import "@/styles/markdown_typography_plugin_colors.css";
+@import "@/styles/tailwind_theme.css";
