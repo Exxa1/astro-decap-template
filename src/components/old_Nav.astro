@@ -1,0 +1,71 @@
+---
+import removeTrailingSlash from "@/utils/removeTrailingSlash"
+---
+
+<nav role="navigation" aria-label="Global" class="flex items-center justify-between p-10 lg:px-16">
+	<div role="list" class="flex lg:flex-1">
+		<a href="/" class="-m-1.5 flex p-1.5">
+			<img src="/logo.png" alt="Csapatlogo" class="h-8 w-auto rounded-sm" />
+			<span class="justify-middle pl-4 text-lg font-semibold underline">1507.hu</span>
+		</a>
+	</div>
+	<div class="flex lg:hidden">
+		<button
+			type="button"
+			class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
+		>
+        <div class="absolute top-0 right-0 p-4">
+			<svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+        </div>
+		</button>
+	</div>
+	<div class="phone-menu lg:flex lg:gap-x-12">
+        <div class="absolute top-0 right-0 p-4">
+		<svg
+			class="h-8 w-8"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			stroke-width="2"
+			stroke="currentColor"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<path stroke="currentColor" d="M0 0h24v24H0z"></path>
+			<line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line></svg
+		></div>
+
+		<div class="grid place-items-center gap-8">
+			<a href="/" class="flex h-10 items-center text-lg font-semibold text-black">Kezdőlap</a>
+			<a href="/posts" class="flex h-10 items-center text-lg font-semibold text-black">Hírek</a>
+			<a href="/rolunk" class="flex h-10 items-center text-lg font-semibold text-black">Rólunk</a>
+			<a href="#" class="flex h-10 items-center text-lg font-semibold text-black">Támogass</a>
+		</div>
+	</div>
+</nav>
+
+<style>
+	@reference "@/styles/global.css";
+
+	.big-screen-menu {
+	}
+
+	.phone-menu {
+		@apply bg-colorfor-test-blue fixed top-0 right-0 h-screen w-[80vw] overflow-hidden py-24;
+	}
+</style>
+
+
+<script lang="ts">
+
+
+
+</script>

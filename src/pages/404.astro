@@ -1,12 +1,12 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import NotFoundPage from "@/data/404";
+import Layout from '@/layouts/Layout.astro'
+import NotFoundPage from '@/data/404'
 ---
 
 <Layout>
-  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
-    <h1 class="text-6xl font-bold mb-4">{NotFoundPage.alert}</h1>
-    <p class="text-xl mb-8">{NotFoundPage.message}</p>
-    <a href={NotFoundPage.link} class="hover:underline">{NotFoundPage.action}</a>
-  </section>
+	<section class="flex min-h-[80vh] flex-col items-center justify-center px-4 text-center">
+		<h1 class="mb-4 text-6xl font-bold">{NotFoundPage.alert}</h1>
+		<p class="mb-8 text-xl">{NotFoundPage.message}</p>
+		<a href={NotFoundPage.link} class="hover:underline">{NotFoundPage.action}</a>
+	</section>
 </Layout>

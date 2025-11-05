@@ -1,71 +1,140 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-import Layout from "@/layouts/Layout.astro";
+import Layout from '@/layouts/Layout.astro'
 
-const posts = await getCollection("posts");
+import Button from '@/components/application_UI/buttons/button.astro'
+
+const posts = await getCollection('posts')
 ---
 
 <Layout>
-<main class="py-4 lg:py-10">
-  <!-- Az oldal alap paddingja -->
-  <div class="px-10 lg:px-20">
-    <!-- Hero -->
-    <div>
-      <div>
-        <h2 class="text-4xl text-green-900 font-semibold uppercase">1507.</h2>
-        <hr class="w-10 mt-3 h-px">
-        <h1 class="text-5xl text-black font-bold mt-4 mb-2 ">Árpád-házi Szent Margit Cserkészcsapat</h1>
-        <p class="text-xl text-gray-500 font-semibold">Magyarország legnagyobb vidéki csapata Szeged város szívében.</p>
-        <div class="mt-4">
-          <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Hírek</button></a>
-          <a href=""><button class="text-green-900 hover:text-white border text-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Kapcsolat</button></a>
-        </div>
-      </div>
-      <div class="mt-6 lg:mt-10">
-        <img src="csapat_foto_edited.JPG" alt="Csapatunk csoportképe" class="w-screen rounded-xl lg:rounded-3xl">
-      </div>
-    </div>
+	<main class="py-4 lg:py-10">
+		<!-- Az oldal alap paddingja -->
+		<div class="px-10 lg:px-20">
+			<!-- Hero -->
+			<div>
+				<div>
+					<h2 class="text-4xl font-semibold text-green-900 uppercase">1507.</h2>
+					<hr class="mt-3 h-px w-10" />
+					<h1 class="mt-4 mb-2 text-5xl font-bold text-black">
+						Árpád-házi Szent Margit Cserkészcsapat
+					</h1>
+					<p class="text-xl font-semibold text-gray-500">
+						Magyarország legnagyobb vidéki csapata Szeged város szívében.
+					</p>
+					<div class="mt-4">
+						<a href=""
+							><button
+								class="me-2 mb-2 rounded-lg bg-black px-7 py-3.5 text-sm font-medium text-white hover:bg-gray-900"
+								>Hírek</button
+							></a
+						>
+						<a href=""
+							><button
+								class="me-2 mb-2 rounded-lg border px-7 py-3.5 text-center text-sm font-medium text-green-900 hover:bg-green-800 hover:text-white focus:ring-4 focus:ring-green-300 focus:outline-none dark:border-green-500 dark:text-green-500 dark:hover:bg-green-600 dark:hover:text-white dark:focus:ring-green-800"
+								>Kapcsolat</button
+							></a
+						>
+					</div>
+				</div>
+				<div class="mt-6 lg:mt-10">
+					<img
+						src="csapat_foto_edited.JPG"
+						alt="Csapatunk csoportképe"
+						class="w-screen rounded-xl lg:rounded-3xl"
+					/>
+				</div>
+			</div>
 
-    <!-- Hírek/Esenények -->
-    <div class="text-center text-2xl my-20 flex flex-col-reverse lg:flex lg:flex-row shadow-md shadow-[#e1642c] shadow rounded-3xl">
-      <div class="w-full lg:w-1/2 h-auto rounded-l-3xl">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043" style="border-width:0" frameborder="0" scrolling="no" class="w-full h-96 lg:h-[500px] rounded-b-3xl lg:rounded-l-3xl"></iframe>
-      </div>
-      <div class="w-full lg:w-1/2 p-10 rounded-t-3xl lg:rounded-r-3xl">
-        <h2 class="text-4xl font-bold text-[#e1642c] mb-4">Legfrissebb híreink</h2>
-      </div>
-    </div>
-  </div>
+			<!-- Hírek/Esenények -->
+			<div
+				class="my-20 flex flex-col-reverse rounded-3xl text-center text-2xl shadow shadow-md shadow-[#e1642c] lg:flex lg:flex-row"
+			>
+				<div class="h-auto w-full rounded-l-3xl lg:w-1/2">
+					<iframe
+						src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043"
+						style="border-width:0"
+						frameborder="0"
+						scrolling="no"
+						class="h-96 w-full rounded-b-3xl lg:h-[500px] lg:rounded-l-3xl"></iframe>
+				</div>
+				<div class="w-full rounded-t-3xl p-10 lg:w-1/2 lg:rounded-r-3xl">
+					<h2 class="mb-4 text-4xl font-bold text-[#e1642c]">Legfrissebb híreink</h2>
+          <Button to="/posts">ezegygomb</Button>
+				</div>
+			</div>
+		</div>
 
-  <!-- Rólunk + Kapcsolat -->
-  <div class="w-auto flex-col lg:flex lg:flex-row py-10 lg:py-20">
-    <div class="hidden lg:block w-auto lg:w-1/2 h-[500px] bg-[url('/ors.jpg')] sm:rounded-xl lg:rounded-r-3xl bg-contain bg-no-repeat lg:bg-cover bg-center lg:shadow-md lg:shadow-[#e1642c]"></div>
-    <div><img src="/ors.jpg" alt="Kép a legjobb Őrsről" class="block lg:hidden w-auto h-auto"></div>
-    <div class="w-auto lg:w-1/2 p-10 lg:p-20">
-      <h2 class="text-4xl font-semibold text-[#e1642c]">Csapatunkról</h2>
-      <h3 class="text-2xl mt-10 mb-3">Csapatunk története</h3>
-      <p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laboriosam aspernatur, incidunt unde ut est, aliquid recusandae nam dolor nostrum laborum tempora facilis ea doloribus numquam autem consequuntur, culpa modi!</p>
-      <h3 class="text-2xl mt-10 mb-3">Kapcsolat</h3>
-      <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vero ullam ab eveniet fuga explicabo? </p>
-      <div class="mt-10">
-        <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Kapcsolat</button></a>
-        <a href=""><button class="text-green-900 hover:text-white border text-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-3.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Rólunk</button></a>
-      </div>
-    </div>
-  </div>
+		<!-- Rólunk + Kapcsolat -->
+		<div class="w-auto flex-col py-10 lg:flex lg:flex-row lg:py-20">
+			<div
+				class="hidden h-[500px] w-auto bg-[url('/ors.jpg')] bg-contain bg-center bg-no-repeat sm:rounded-xl lg:block lg:w-1/2 lg:rounded-r-3xl lg:bg-cover lg:shadow-md lg:shadow-[#e1642c]"
+			>
+			</div>
+			<div>
+				<img src="/ors.jpg" alt="Kép a legjobb Őrsről" class="block h-auto w-auto lg:hidden" />
+			</div>
+			<div class="w-auto p-10 lg:w-1/2 lg:p-20">
+				<h2 class="text-4xl font-semibold text-[#e1642c]">Csapatunkról</h2>
+				<h3 class="mt-10 mb-3 text-2xl">Csapatunk története</h3>
+				<p class="text-lg">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laboriosam aspernatur,
+					incidunt unde ut est, aliquid recusandae nam dolor nostrum laborum tempora facilis ea
+					doloribus numquam autem consequuntur, culpa modi!
+				</p>
+				<h3 class="mt-10 mb-3 text-2xl">Kapcsolat</h3>
+				<p class="text-lg">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vero ullam ab eveniet fuga
+					explicabo?
+				</p>
+				<div class="mt-10">
+					<a href=""
+						><button
+							class="me-2 mb-2 rounded-lg bg-black px-7 py-3.5 text-sm font-medium text-white hover:bg-gray-900"
+							>Kapcsolat</button
+						></a
+					>
+					<a href=""
+						><button
+							class="me-2 mb-2 rounded-lg border px-7 py-3.5 text-center text-sm font-medium text-green-900 hover:bg-green-800 hover:text-white focus:ring-4 focus:ring-green-300 focus:outline-none dark:border-green-500 dark:text-green-500 dark:hover:bg-green-600 dark:hover:text-white dark:focus:ring-green-800"
+							>Rólunk</button
+						></a
+					>
+				</div>
+			</div>
+		</div>
 
-  <!-- Támogatás (Alap padding újra)-->
-  <div class="px-10 lg:px-20 my-0 lg:my-10 lg:my-20 lg:flex flex flex-col lg:flex-row lg:align-center">
-    <div class="w-full lg:w-1/2 p-4 lg:p-10">
-      <h2 class="text-4xl font-semibold text-[#e1642c] mb-4">Támogass minket!</h2>
-      <p class="text-lg my-4 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste corrupti, labore repellat explicabo quod in voluptate ipsam rerum veniam inventore. Repellendus aliquid est officia?</p>
-      <a href=""><button class="text-white bg-black hover:bg-gray-900 font-medium rounded-lg text-sm px-7 py-3.5 me-2 mb-2">Bővebben</button></a>	
-    </div>
-    <div class="w-auto flex place-self-center">
-      <img src="/1szaz.jpg" alt="" class="h-24 lg:h-52 w-auto rounded-xl lg:rounded-3xl shadow-xl ml-5">
-      <img src="/50.jpg" alt="" class="h-24 lg:h-52 w-auto rounded-xl lg:rounded-3xl shadow-xl ml-5">
-    </div>
-  </div>
-</main>
+		<!-- Támogatás (Alap padding újra)-->
+		<div
+			class="lg:align-center my-0 flex flex-col px-10 lg:my-10 lg:my-20 lg:flex lg:flex-row lg:px-20"
+		>
+			<div class="w-full p-4 lg:w-1/2 lg:p-10">
+				<h2 class="mb-4 text-4xl font-semibold text-[#e1642c]">Támogass minket!</h2>
+				<p class="my-4 mb-2 text-lg">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste corrupti, labore
+					repellat explicabo quod in voluptate ipsam rerum veniam inventore. Repellendus aliquid est
+					officia?
+				</p>
+				<a href=""
+					><button
+						class="me-2 mb-2 rounded-lg bg-black px-7 py-3.5 text-sm font-medium text-white hover:bg-gray-900"
+						>Bővebben</button
+					></a
+				>
+			</div>
+			<div class="flex w-auto place-self-center">
+				<img
+					src="/1szaz.jpg"
+					alt=""
+					class="ml-5 h-24 w-auto rounded-xl shadow-xl lg:h-52 lg:rounded-3xl"
+				/>
+				<img
+					src="/50.jpg"
+					alt=""
+					class="ml-5 h-24 w-auto rounded-xl shadow-xl lg:h-52 lg:rounded-3xl"
+				/>
+			</div>
+		</div>
+	</main>
 </Layout>

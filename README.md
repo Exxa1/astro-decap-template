@@ -24,6 +24,10 @@ I made a folder named secret and exculded pages going from there from sitemap in
 This way it's possible to make pages that are only reachable if you know the link.
 Keep in mind to keep in the header of those pages: <meta name="robots" content="noindex"> so nice robots don't crawl them.
 
+## Dev tools
+
+The code is formatted using the VS code prettier extension
+
 
 # 👨‍🚀 Astro & decap (netlify) CMS - Portfolio Template
 
