@@ -1,11 +1,33 @@
 ---
 interface Props {
-  to: string;
+	to: string
+	button_style?: "defaultbutton" | "darkbutton" | "accentbutton"
 }
 
-const { to } = Astro.props;
+const { to, button_style = "defaultbutton" } = Astro.props
 ---
 
-<a href={ to } class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-   <slot />
+<a
+	href={to}
+	id="general_button"
+	class={`${button_style} me-2 mb-2 rounded-lg px-7 py-3.5 text-sm font-medium transition-colors duration-300`}
+>
+	<slot />
 </a>
+
+<style>
+	@reference "@/styles/tailwind_theme.css";
+
+	.defaultbutton {
+		@apply text-colorfor-text-button bg-colorfor-bg-button hover:bg-colorfor-bg-button-hover;
+	}
+
+	.darkbutton {
+		@apply text-colorfor-text-button bg-colorfor-bg-button-dark hover:bg-colorfor-bg-button-dark/90;
+	}
+
+  .accentbutton {
+    @apply text-colorfor-accent-secondary bg-colorfor-bg-page border border-colorfor-accent-secondary hover:border-colorfor-accent-secondary/50;
+  }
+
+</style>
