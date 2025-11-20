@@ -1,16 +1,16 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
 import Hero from "@/components/Landing_page/Hero.astro"
 import News from "@/components/Landing_page/News.astro"
 import Rolunk from "@/components/Landing_page/Rolunk.astro"
-import Tamogass from "@/components/Landing_page/tamogass.astro"
+import Tamogass from "@/components/Landing_page/Tamogass.astro"
 ---
 
-<Layout>
-	<main class="py-4 lg:py-10">
-		<!-- Az oldal alap paddingja -->
-		<div class="px-10 lg:px-20">
+<BaseLayout>
+	<DefaultPadding>
+		<main class="py-4 lg:py-10">
 			<!-- Hero -->
 			<Hero />
 
@@ -22,7 +22,6 @@ import Tamogass from "@/components/Landing_page/tamogass.astro"
 
 			<!-- Támogatás (Alap padding újra)-->
 			<Tamogass />
-
-		</div>
-	</main>
-</Layout>
+		</main>
+	</DefaultPadding>
+</BaseLayout>

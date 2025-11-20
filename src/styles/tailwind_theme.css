@@ -65,6 +65,7 @@
 
 	/* Border Tokens */
 	--color-colorfor-border-subtle: var(--color-gray-200);
+	--color-colorfor-border-strong: var(--color-gray-700);
 	--color-colorfor-border-input: var(--color-gray-300);
 	--color-colorfor-border-button: var(--color-orange-500);
 
@@ -73,8 +74,8 @@
 	--color-colorfor-accent-secondary: var(--color-green-500);
 
 	/* Extra tokens */
-	--color-colorfor-hamburgermenu-bg: var(--color-gray-300)
-	--color-colorfor-hamburgermenu-lines: var(--color-gray-800)
+	--color-colorfor-hamburgermenu-bg: var(--color-gray-300);
+	--color-colorfor-hamburgermenu-lines: var(--color-gray-800);
 }
 
 
