@@ -49,6 +49,7 @@
 	--color-colorfor-text-secondary: var(--color-gray-600);
 	--color-colorfor-text-link: var(--color-blue-600);
 	--color-colorfor-text-button: var(--color-white);
+	--color-colorfor-text-footer: var(--color-white);
 	--color-colorfor-text-nav: var(--color-gray-700);
 
 	/* Background Tokens */

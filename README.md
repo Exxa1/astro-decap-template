@@ -5,7 +5,7 @@
   - public/admin/config.yml
 
 - Change the basic information in the src/data folder for a new webpage.
-- For different languages change the text for the not found page in the src/data/404.ts file.
+- For different languages change the text in the src/data/base_text.ts file.
 - To change the nav items go to src/data/nav_items.ts
 
 

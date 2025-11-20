@@ -1,5 +1,6 @@
 ---
 import { nav_items, call_to_action } from "@/data/nav_items"
+import Socials_list from "@/components/socials_list.astro"
 ---
 
 <header class="bg-colorfor-bg-header">
@@ -18,8 +19,8 @@ import { nav_items, call_to_action } from "@/data/nav_items"
 				<nav aria-label="Global" class="hidden md:block">
 					<ul class="flex items-center gap-6 text-sm">
 						{
-							nav_items.map((item, index) => (
-								<li key={index}>
+							nav_items.map((item) => (
+								<li>
 									<a
 										class="text-colorfor-text-body hover:text-colorfor-text-body/70 transition"
 										href={item.link}
@@ -76,8 +77,8 @@ import { nav_items, call_to_action } from "@/data/nav_items"
 			class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"
 		>
 			{
-				nav_items.map((item, index) => (
-					<li key={index} class="text-center">
+				nav_items.map((item) => (
+					<li class="text-center">
 						<a class="text-colorfor-text-nav hover:text-colorfor-text-nav/70 text-lg" href={item.link}>
 							{" "}
 							{item.name}{" "}
@@ -85,6 +86,9 @@ import { nav_items, call_to_action } from "@/data/nav_items"
 					</li>
 				))
 			}
+			<li class="text-center">
+				<Socials_list/>
+			</li>
 		</ul>
 	</nav>
 

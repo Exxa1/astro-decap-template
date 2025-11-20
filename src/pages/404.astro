@@ -1,12 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import NotFoundPage from '@/data/404'
+import base_text from '@/data/base_text'
 ---
 
 <Layout>
 	<section class="flex min-h-[80vh] flex-col items-center justify-center px-4 text-center">
-		<h1 class="mb-4 text-6xl font-bold">{NotFoundPage.alert}</h1>
-		<p class="mb-8 text-xl">{NotFoundPage.message}</p>
-		<a href={NotFoundPage.link} class="hover:underline">{NotFoundPage.action}</a>
+		<h1 class="mb-4 text-6xl font-bold">{base_text.NotFoundPage.alert}</h1>
+		<p class="mb-8 text-xl">{base_text.NotFoundPage.message}</p>
+		<a href={base_text.NotFoundPage.link} class="hover:underline">{base_text.NotFoundPage.action}</a>
 	</section>
 </Layout>
