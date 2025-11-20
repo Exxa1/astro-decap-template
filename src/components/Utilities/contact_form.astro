@@ -1,0 +1,42 @@
+---
+import FormButton from "@/components/application_UI/buttons/formButton.astro"
+---
+
+<form class="mx-auto max-w-sm space-y-4 py-20">
+	<div>
+		<label for="visitors" class="mb-2 block text-sm text-colorfor-text-body/80">Base Input</label>
+		<input
+			type="text"
+			id="visitors"
+			class="bg-colorfor-bg-button-gray/30 border-colorfor-bg-button-dark/50 block w-full rounded-sm px-3 py-2.5 text-sm shadow-md focus:shadow-colorfor-accent-primary/20 focus:outline-none"
+			placeholder="placeholder"
+			required
+		/>
+	</div>
+	<div>
+		<label for="visitors" class="mb-2 block text-sm text-colorfor-text-body/80">Large Input</label>
+		<input
+			type="text"
+			id="visitors"
+			class="bg-colorfor-bg-button-gray/30 border-colorfor-bg-button-dark/50 block w-full rounded-sm px-3 py-3.5 text-sm shadow-md focus:shadow-colorfor-accent-primary/20 focus:outline-none"
+			placeholder=""
+			required
+		/>
+	</div>
+	<div>
+		<label for="visitors" class="mb-2 block text-sm text-colorfor-text-body/80"
+			>Extra Large Input</label
+		>
+		<input
+			type="text"
+			id="visitors"
+			class="bg-colorfor-bg-button-gray/30 border-colorfor-bg-button-dark/50 block w-full rounded-sm px-3 py-5 text-sm shadow-md focus:shadow-colorfor-accent-primary/20 focus:outline-none"
+			placeholder=""
+			required
+		/>
+	</div>
+
+	<div class="py-4">
+		<FormButton button_style="accentbutton">Send</FormButton>
+	</div>
+</form>
