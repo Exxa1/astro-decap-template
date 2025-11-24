@@ -1,21 +1,45 @@
 ---
 import { getCollection } from "astro:content"
+import formatDate from "@/utils/formatDate"
 
 const posts = await getCollection("posts")
 ---
 
 <div
-				class="my-20 flex flex-col-reverse rounded-3xl text-center text-2xl shadow shadow-colorfor-accent-primary lg:flex lg:flex-row"
+	class="shadow-colorfor-accent-primary my-20 flex flex-col-reverse rounded-3xl text-center text-2xl shadow lg:flex lg:flex-row"
+>
+	<div class="h-auto w-full rounded-l-3xl lg:w-1/2">
+		<iframe
+			src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043"
+			style="border-width:0"
+			frameborder="0"
+			scrolling="no"
+			class="h-96 w-full rounded-b-3xl lg:h-[500px] lg:rounded-l-3xl"></iframe>
+	</div>
+	<div class="w-full rounded-t-3xl p-10 lg:w-1/2 lg:rounded-r-3xl">
+		<h2 class="text-colorfor-text-heading-accent mb-4 text-4xl font-bold">Legfrissebb híreink</h2>
+
+
+<article class="flex flex-col gap-4 lg:pl-20 text-sm">
+	{
+		posts.map((post) => (
+			<a
+				class="border-colorfor-border-strong flex max-w-prose flex-col gap-2 py-6 transition-all hover:text-current/70"
+				href={`/posts/${post.slug}`}
 			>
-				<div class="h-auto w-full rounded-l-3xl lg:w-1/2">
-					<iframe
-						src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043"
-						style="border-width:0"
-						frameborder="0"
-						scrolling="no"
-						class="h-96 w-full rounded-b-3xl lg:h-[500px] lg:rounded-l-3xl"></iframe>
+				<div class="flex w-full items-center justify-between">
+					<h2 class="text-xl font-bold">{post.data.title}</h2>
+
+					<div class="flex flex-row items-center gap-4">
+						<p>{formatDate(post.data.publishedAt)}</p>
+					</div>
 				</div>
-				<div class="w-full rounded-t-3xl p-10 lg:w-1/2 lg:rounded-r-3xl">
-					<h2 class="mb-4 text-4xl font-bold text-colorfor-text-heading-accent">Legfrissebb híreink</h2>
-				</div>
-			</div>
+				<p class="text-left">{post.data.description}</p>
+			</a>
+		))
+	}
+</article>
+
+
+	</div>
+</div>

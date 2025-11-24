@@ -15,4 +15,4 @@ const postsCollection = defineCollection({
 
 export const collections = { posts: postsCollection };
 // This script enables us to use the getCollection function in other pages.
-// This setup provides type safety and validation for your blog posts, making it harder to accidentally publish posts with missing or incorrect metadata.
+// This setup provides type safety and validation for the blog posts, making it harder to accidentally publish posts with missing or incorrect metadata.
