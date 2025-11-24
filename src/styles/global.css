@@ -1,5 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "@/styles/tailwind_theme.css";
 @import "tailwindcss";
 @import "@/styles/markdown_typography_plugin_colors.css";
 @plugin "@tailwindcss/typography";
+
+
+h1, h2, h3, h4, h5, h6 {
+		font-family: var(--heading-font-family);
+		letter-spacing: var(--heading-font-spacing);
+	}
+
+h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+}
+
+h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+h4 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+}

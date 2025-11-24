@@ -2,7 +2,14 @@
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
-import Hero from "@/components/Landing_page/Hero.astro"
+import Hero from "@/components/Landing_page/1_Hero.astro"
+import Stakes from "@/components/Landing_page/2_Stakes.astro"
+import ValueProposition from "@/components/Landing_page/3_value_proposition.astro"
+import EmpathyAndCompetency from "@/components/Landing_page/4_Empathy_and_Competency.astro"
+import Plan from "@/components/Landing_page/5_Plan.astro"
+import Explanatory_paragraph from "@/components/Landing_page/6_Explanatory_paragraph.astro"
+
+
 import News from "@/components/Landing_page/News.astro"
 import Rolunk from "@/components/Landing_page/Rolunk.astro"
 import Tamogass from "@/components/Landing_page/Tamogass.astro"
@@ -14,14 +21,16 @@ import Tamogass from "@/components/Landing_page/Tamogass.astro"
 			<!-- Hero -->
 			<Hero />
 
-			<!-- Hírek/Esenények -->
-			<News />
+			<Stakes />
 
-			<!-- Rólunk + Kapcsolat -->
-			<Rolunk />
+			<ValueProposition />
 
-			<!-- Támogatás (Alap padding újra)-->
-			<Tamogass />
+			<EmpathyAndCompetency />
+
+			<Plan />
+
+			<Explanatory_paragraph />
+
 		</main>
 	</DefaultPadding>
 </BaseLayout>

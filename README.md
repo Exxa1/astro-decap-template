@@ -16,6 +16,9 @@ https://www.youtube.com/watch?v=GUupJJC5Ac4&t=284s
 
 To change the colors go to src/styles/tailwind_theme.css and read the comments there in the code
 
+### Logo
+To change the logo, go to the Logo.astro component and insert another svg code.
+
 ### Font
 To Change the font, first change the import in global.css, then go to src/styles/tailwind_theme.css and change the font variables.
 
