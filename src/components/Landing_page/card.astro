@@ -1,0 +1,53 @@
+---
+interface Props {
+	img_src?: string
+	img_alt?: string
+	card_order?: "left" | "right"
+    card_style?: "fill" | "outline"
+}
+
+const { img_src, img_alt, card_order="left" , card_style="outline" } = Astro.props
+---
+
+<div id="card-box" class={`${card_style} mx-auto flex flex-col md:flex-row my-12`}>
+	<div id="card-text" class={`${card_order} md:basis-3/5 px-8 py-6 md:px-20 md:py-16 flex flex-col gap-12 lg:gap-24`}>
+		<slot />
+	</div>
+    {img_src ? (
+        <div id="card-image" class={`${card_order} md:basis-2/5 content-center py-4 px-6 flex`}>
+            <img class="max-h-[1200px]" src={img_src} alt={img_alt} />
+        </div>
+    ) : null}
+</div>
+
+<style>
+    @reference "@/styles/tailwind_theme.css";
+
+    #card-box.outline {
+        @apply border-colorfor-stroke-card border-2;
+    }
+
+    #card-box.fill {
+        @apply bg-colorfor-bg-card text-colorfor-text-body-inverse;
+    }
+
+	#card-text.right {
+		order: 2;
+		text-align: right;
+	}
+
+	#card-image.right {
+		order: 1;
+        @apply justify-end;
+	}
+
+	#card-text.left {
+		order: 1;
+		text-align: left;
+	}
+
+	#card-image.left {
+		order: 2;
+        @apply justify-start;
+	}
+</style>

@@ -9,80 +9,62 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 <header class="bg-colorfor-bg-header font-nav text-xl tracking-(--heading-font-spacing)">
 	<DefaultPadding>
 		<div class="mx-auto">
-			<div class="flex h-24 items-center justify-between">
-				<div class="h-full">
-					<a class="block h-full" href={nav_items[0].link}>
+			<div class="flex h-32 items-center justify-between">
+
+
+					<a class="block h-32 absolute top-12 -translate-x-1/2 left-1/2 transform z-40" href={nav_items[0].link}>
 						<span class="sr-only">{nav_items[0].name}</span>
-						<div class="h-full aspect-square p-6">
-							<Logo />
+						<div class="flex flex-row items-center">
+							<div class="text-md text-right">Kunart</div>
+							<div class="aspect-square p-1 h-24 w-24">
+								<Logo />
+							</div>
+							<div class="text-md">Portrék</div>
 						</div>
 					</a>
-				</div>
 
-				<div class="md:flex md:items-center md:gap-12">
-					<nav aria-label="Global" class="hidden md:block">
-						<ul class="flex items-center gap-6">
-							{
-								nav_items.map((item) => (
-									<li>
-										<a
-											class="hover:text-current/70 transition"
-											href={item.link}
-										>
-											{" "}
-											{item.name}{" "}
-										</a>
-									</li>
-								))
-							}
-						</ul>
-					</nav>
-
-					<div class="flex items-center gap-4">
-						<div class="sm:flex sm:gap-4">
-							<Button to={call_to_action.link} button_style="darkbutton">{call_to_action.name}</Button>
-						</div>
-
-						<div class="block md:hidden">
+						<div class="absolute right-8 top-4">
 							<button
 								id="mobile-menu-button"
-								class="bg-colorfor-bg-button-gray text-colorfor-text-body hover:text-colorfor-text-body/75 rounded-(--roundedness-button) p-2 transition"
+								class="group w-12 rounded-(--roundedness-button) p-2 transition"
 								aria-controls="mobile-menu"
 								aria-expanded="false"
 								aria-label="Toggle menu"
 							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="size-5"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-									stroke-width="2"
+								<div
+									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-10 transition-[width] duration-500 group-aria-expanded:w-12"
 								>
-									<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"
-									></path>
-								</svg>
+								</div>
+								<div
+									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-12 transition-[width] duration-500 group-aria-expanded:w-8"
+								>
+								</div>
+								<div
+									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-8 transition-[width] duration-500 group-aria-expanded:w-10"
+								>
+								</div>
 							</button>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</DefaultPadding>
 
-	<!-- Mobile menu (hidden on md and up) -->
-	<nav id="mobile-menu" class="relative hidden transition md:hidden z-30" aria-label="Global">
+	<!-- Mobile menu-->
+	<nav id="mobile-menu" class="relative z-30 hidden transition" aria-label="Global">
 		<ul
 			id="mobile_navlist"
 			class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"
 		>
+			<li>
+				<div class="text-center">
+					<Button to={call_to_action.link} button_style="darkbutton">{call_to_action.name}</Button>
+				</div>
+			</li>
 			{
 				nav_items.map((item) => (
 					<li class="text-center">
-						<a
-							class="hover:text-current/70"
-							href={item.link}
-						>
+						<a class="hover:text-current/70" href={item.link}>
 							{" "}
 							{item.name}{" "}
 						</a>

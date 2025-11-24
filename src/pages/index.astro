@@ -9,6 +9,8 @@ import EmpathyAndCompetency from "@/components/Landing_page/4_Empathy_and_Compet
 import Plan from "@/components/Landing_page/5_Plan.astro"
 import Explanatory_paragraph from "@/components/Landing_page/6_Explanatory_paragraph.astro"
 
+import Card from "@/components/Landing_page/card.astro"
+
 
 import News from "@/components/Landing_page/News.astro"
 import Rolunk from "@/components/Landing_page/Rolunk.astro"
@@ -20,6 +22,11 @@ import Tamogass from "@/components/Landing_page/Tamogass.astro"
 		<main class="py-4 lg:py-10">
 			<!-- Hero -->
 			<Hero />
+
+			<Card img_src="/images/landing_page/landingpage-1.jpg" card_order="left" card_style="outline" img_alt="Attention image">
+				<h2>This is why</h2>
+				<p>To pay attention</p>
+			</Card>
 
 			<Stakes />
 

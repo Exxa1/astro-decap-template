@@ -1,7 +1,7 @@
 @theme {
 
-	--default-font-family: 'Montserrat', sans-serif;
-	--heading-font-family: "Archivo Black", sans-serif;
+	--default-font-family: "Cormorant Garamond", serif;
+	--heading-font-family: "Bebas Neue", sans-serif;
 	--default-font-spacing: 0.02em;
 	--heading-font-spacing: 0.02em;
 
@@ -54,10 +54,11 @@
 	--font-paragraph: var(--default-font-family);
 	--font-heading: var(--heading-font-family);
 	--font-nav: var(--heading-font-family);
-	--color-colorfor-text-heading: var(--color-gray-900);
-	--color-colorfor-text-heading-2: var(--color-gray-700);
+	--color-colorfor-text-heading: var(--color-black);
+	--color-colorfor-text-heading-2: var(--color-black);
 	--color-colorfor-text-heading-accent: var(--color-orange-500);
-	--color-colorfor-text-body: var(--color-gray-700);
+	--color-colorfor-text-body: var(--color-gray-800);
+	--color-colorfor-text-body-inverse: var(--color-white);
 	--color-colorfor-text-secondary: var(--color-gray-600);
 	--color-colorfor-text-link: var(--color-blue-600);
 	--color-colorfor-text-button: var(--color-white);
@@ -67,7 +68,7 @@
 	/* Background Tokens */
 	--color-colorfor-bg-page: var(--color-white);
 	--color-colorfor-bg-section: var(--color-gray-50);
-	--color-colorfor-bg-card: var(--color-white);
+	--color-colorfor-bg-card: var(--color-black);
 	--color-colorfor-bg-header: var(--color-white);
 	--color-colorfor-bg-footer: var(--color-black);
 	--color-colorfor-bg-button: var(--color-orange-500);
@@ -91,6 +92,8 @@
 
 	--roundedness-button: var(--roundedness-default);
 	--roundedness-textinput: var(--roundedness-default);
+
+	--color-colorfor-stroke-card: var(--color-black);
 }
 
 
