@@ -6,7 +6,7 @@ import Logo from "@/components/Utilities/Logo.astro"
 import DefaultPadding from "@/layouts/DefaultPadding.astro"
 ---
 
-<header class="bg-colorfor-bg-header font-nav text-xl">
+<header class="bg-colorfor-bg-header font-nav text-xl tracking-(--heading-font-spacing)">
 	<DefaultPadding>
 		<div class="mx-auto">
 			<div class="flex h-24 items-center justify-between">
@@ -71,7 +71,7 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 	</DefaultPadding>
 
 	<!-- Mobile menu (hidden on md and up) -->
-	<nav id="mobile-menu" class="relative hidden transition md:hidden" aria-label="Global">
+	<nav id="mobile-menu" class="relative hidden transition md:hidden z-30" aria-label="Global">
 		<ul
 			id="mobile_navlist"
 			class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"

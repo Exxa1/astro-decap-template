@@ -1,7 +1,9 @@
 @theme {
 
 	--default-font-family: 'Montserrat', sans-serif;
-	--heading-font-family: 'Bebas Neue', cursive;
+	--heading-font-family: "Archivo Black", sans-serif;
+	--default-font-spacing: 0.02em;
+	--heading-font-spacing: 0.02em;
 
 	--roundedness-default: 1px;
 

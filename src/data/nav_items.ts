@@ -8,12 +8,12 @@ type nav_items = nav_item[];
 type call_to_action = nav_item;
 
 const nav_items: nav_items = [
-    { name: "Kezdőlap", link: "/" },
-    { name: "Hírek", link: "/posts" },
-    { name: "Rólunk", link: "/rolunk" },
-    { name: "Támogass", link: "/adoegyszazalek" },
+    { name: "Home", link: "/" },
+    { name: "Testimonials", link: "/posts" },
+    { name: "About", link: "/rolunk" },
+    { name: "Portfolio", link: "/portfolio" },
 ];
 
-const call_to_action = { name: "Call to action", link: "/contact" };
+const call_to_action = { name: "Book Your Session", link: "/contact" };
 
 export { nav_items, call_to_action };

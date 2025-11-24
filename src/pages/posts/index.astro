@@ -2,32 +2,35 @@
 import { getCollection } from "astro:content"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import formatDate from "@/utils/formatDate"
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
 const posts = await getCollection("posts")
 ---
 
 <BaseLayout>
-	<main class="flex min-h-svh flex-col gap-20">
-		<h1 class="text-colorfor-text-heading text-2xl">Title</h1>
+	<DefaultPadding>
+		<main class="flex min-h-svh flex-col gap-20">
+			<h1 class="text-colorfor-text-heading text-2xl">Title</h1>
 
-		<article class="flex flex-col gap-4 lg:pl-20">
-			{
-				posts.map((post) => (
-					<a
-						class="border-colorfor-border-strong flex max-w-prose flex-col gap-2 border-t py-12 transition-all hover:text-current/70"
-						href={`/posts/${post.slug}`}
-					>
-						<div class="flex w-full items-center justify-between">
-							<h2 class="text-xl font-bold">{post.data.title}</h2>
+			<article class="flex flex-col gap-4 lg:pl-20">
+				{
+					posts.map((post) => (
+						<a
+							class="border-colorfor-border-strong flex max-w-prose flex-col gap-2 border-t py-12 transition-all hover:text-current/70"
+							href={`/posts/${post.slug}`}
+						>
+							<div class="flex w-full items-center justify-between">
+								<h2 class="text-xl font-bold">{post.data.title}</h2>
 
-							<div class="flex flex-row items-center gap-4">
-								<p>{formatDate(post.data.publishedAt)}</p>
+								<div class="flex flex-row items-center gap-4">
+									<p>{formatDate(post.data.publishedAt)}</p>
+								</div>
 							</div>
-						</div>
-						<p>{post.data.description}</p>
-					</a>
-				))
-			}
-		</article>
-	</main>
+							<p>{post.data.description}</p>
+						</a>
+					))
+				}
+			</article>
+		</main>
+	</DefaultPadding>
 </BaseLayout>
