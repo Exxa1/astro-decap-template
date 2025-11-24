@@ -12,7 +12,6 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
     "@divriots/jampack": "^0.34.0",
-    "@fontsource/open-sans": "^5.0.1",
     "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.15.3",
     "astro-seo": "^0.8.4",
