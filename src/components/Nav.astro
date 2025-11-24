@@ -1,12 +1,12 @@
 ---
 import { nav_items, call_to_action } from "@/data/nav_items"
 import Socials_list from "@/components/socials_list.astro"
+import Button from "@/components/application_UI/buttons/button.astro"
 import Logo from "@/components/Utilities/Logo.astro"
-
 import DefaultPadding from "@/layouts/DefaultPadding.astro"
 ---
 
-<header class="bg-colorfor-bg-header">
+<header class="bg-colorfor-bg-header font-nav text-xl">
 	<DefaultPadding>
 		<div class="mx-auto">
 			<div class="flex h-24 items-center justify-between">
@@ -26,7 +26,7 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 								nav_items.map((item) => (
 									<li>
 										<a
-											class="text-colorfor-text-body hover:text-colorfor-text-body/70 transition"
+											class="hover:text-current/70 transition"
 											href={item.link}
 										>
 											{" "}
@@ -40,18 +40,13 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
 					<div class="flex items-center gap-4">
 						<div class="sm:flex sm:gap-4">
-							<a
-								class="bg-colorfor-bg-button text-colorfor-text-button hover:text-colorfor-text-button/70 rounded-md px-5 py-2.5 text-sm font-medium shadow-sm"
-								href={call_to_action.link}
-							>
-								{call_to_action.name}
-							</a>
+							<Button to={call_to_action.link} button_style="darkbutton">{call_to_action.name}</Button>
 						</div>
 
 						<div class="block md:hidden">
 							<button
 								id="mobile-menu-button"
-								class="bg-colorfor-bg-button-gray text-colorfor-text-body hover:text-colorfor-text-body/75 rounded-sm p-2 transition"
+								class="bg-colorfor-bg-button-gray text-colorfor-text-body hover:text-colorfor-text-body/75 rounded-(--roundedness-button) p-2 transition"
 								aria-controls="mobile-menu"
 								aria-expanded="false"
 								aria-label="Toggle menu"
@@ -85,7 +80,7 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 				nav_items.map((item) => (
 					<li class="text-center">
 						<a
-							class="text-colorfor-text-nav hover:text-colorfor-text-nav/70 text-lg"
+							class="hover:text-current/70"
 							href={item.link}
 						>
 							{" "}

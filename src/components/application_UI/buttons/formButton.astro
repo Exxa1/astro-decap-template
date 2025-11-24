@@ -10,7 +10,7 @@ const { type="submit", button_style = "defaultbutton" } = Astro.props
 <button
 	type="submit"
 	id="general_button"
-	class={`${button_style} me-2 mb-2 rounded-lg px-7 py-3.5 text-sm font-medium transition-colors duration-300`}
+	class={`${button_style} me-2 mb-2 rounded-(--roundedness-button) px-7 py-3.5 text-sm font-medium transition-colors duration-300`}
 >
 	<slot />
 </button>

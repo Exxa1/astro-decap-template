@@ -1,16 +1,19 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from "./BaseLayout.astro"
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
 export interface Props {
-  title?: string;
+	title?: string
 }
 
 //passing the prop is experimental, need to test what effect it has - goal is to pass the title to BaseLayout for SEO
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <BaseLayout title={title}>
-    <div class="prose prose-website-colors mx-auto max-w-prose py-8 md:py-16">
-    <slot />
-    </div>
+	<DefaultPadding>
+		<div class="prose prose-website-colors mx-auto max-w-prose py-8 md:py-16">
+			<slot />
+		</div>
+	</DefaultPadding>
 </BaseLayout>
