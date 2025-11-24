@@ -10,12 +10,12 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 	<DefaultPadding>
 		<div class="mx-auto">
 			<div class="flex h-24 items-center justify-between">
-				<div>
-					<a class="text-colorfor-text-nav block relative top-2" href={nav_items[0].link}>
+				<div class="h-full">
+					<a class="block h-full" href={nav_items[0].link}>
 						<span class="sr-only">{nav_items[0].name}</span>
-							<div class="h-20 w-20">
+						<div class="h-full aspect-square p-6">
 							<Logo />
-							</div>
+						</div>
 					</a>
 				</div>
 

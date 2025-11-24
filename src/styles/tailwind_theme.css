@@ -1,4 +1,9 @@
 @theme {
+
+	--default-font-family: 'Montserrat', sans-serif;
+	--heading-font-family: 'Bebas Neue', cursive;
+
+
 	/* ============================================
      PRIMITIVES (Color Definitions)
      Following this technique: https://www.youtube.com/watch?v=GUupJJC5Ac4&t=284s
@@ -42,6 +47,8 @@
 	 --color-colorfor-test-yellow: #ffff00;
 
 	/* Text Tokens */
+	--font-paragraph: var(--default-font-family);
+	--font-heading: var(--heading-font-family);
 	--color-colorfor-text-heading: var(--color-gray-900);
 	--color-colorfor-text-heading-2: var(--color-gray-700);
 	--color-colorfor-text-heading-accent: var(--color-orange-500);

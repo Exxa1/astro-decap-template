@@ -16,6 +16,8 @@ https://www.youtube.com/watch?v=GUupJJC5Ac4&t=284s
 
 To change the colors go to src/styles/tailwind_theme.css and read the comments there in the code
 
+To change the logo, go to the Logo.astro component and insert another svg code.
+
 The webpage uses the tailwind typography plugin to style the markdown. The colors follow the webpage colors specified in the tailwind_theme.css file (see above) but you can also specifically change them in the src/styles/markdown_typography_plugin_colors.css file.
 
 Use can use different styled buttons from the button component, passing the style as a prop.
