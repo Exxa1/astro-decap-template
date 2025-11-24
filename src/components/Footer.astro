@@ -1,19 +1,22 @@
 ---
-import Socials_list from "./socials_list.astro";
+import Socials_list from "./socials_list.astro"
 import presentation from "@/data/presentation"
 import base_text from "@/data/base_text"
+import Logo from "@/components/Utilities/Logo.astro"
 ---
 
 <footer class="bg-colorfor-bg-footer">
 	<div class="mx-auto max-w-7xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
 		<div class="sm:flex sm:items-center sm:justify-between">
 			<div class="text-colorfor-text-footer">
-				<img src="/logo.png" alt="Company Logo" class="h-32 w-auto" />
+				<div class="h-32 w-32">
+					<Logo />
+				</div>
 			</div>
 
-            <div class="text-colorfor-text-footer">
-            <Socials_list/>
-            </div>
+			<div class="text-colorfor-text-footer">
+				<Socials_list />
+			</div>
 		</div>
 
 		<div
@@ -128,8 +131,10 @@ import base_text from "@/data/base_text"
 			</div>
 		</div>
 
-        <p class="text-colorfor-text-footer/50 text-xs">
-            © {new Date().getFullYear()}. {presentation.company_name}. {base_text.allRightsReserved.text}.
-        </p>
+		<p class="text-colorfor-text-footer/50 text-xs">
+			© {new Date().getFullYear()}. {presentation.company_name}. {
+				base_text.allRightsReserved.text
+			}.
+		</p>
 	</div>
 </footer>

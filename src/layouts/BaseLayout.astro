@@ -1,0 +1,37 @@
+---
+import Header from "../components/Header.astro"
+import SEOTags from "@/components/seo/SEOTags.astro"
+import Footer from "../components/Footer.astro"
+
+import "@/styles/global.css"
+import "@/styles/scrollbar.css"
+import "@fontsource/open-sans"
+
+export interface Props {
+	title?: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en" class="">
+	<SEOTags title={title} />
+
+	<body class="bg-colorfor-bg-page">
+		<Header />
+
+		<!-- Default page values -->
+		<div class="text-colorfor-text-body">
+			<slot />
+		</div>
+
+		<Footer />
+
+		<style is:global>
+			html {
+				font-family: "Open Sans";
+			}
+		</style>
+	</body>
+</html>

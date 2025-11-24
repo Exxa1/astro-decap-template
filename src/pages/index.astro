@@ -1,117 +1,27 @@
 ---
-import { getCollection } from "astro:content"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
 
-import Layout from "@/layouts/Layout.astro"
-
-import Button from "@/components/application_UI/buttons/button.astro"
-
-const posts = await getCollection("posts")
+import Hero from "@/components/Landing_page/Hero.astro"
+import News from "@/components/Landing_page/News.astro"
+import Rolunk from "@/components/Landing_page/Rolunk.astro"
+import Tamogass from "@/components/Landing_page/Tamogass.astro"
 ---
 
-<Layout>
-	<main class="py-4 lg:py-10">
-		<!-- Az oldal alap paddingja -->
-		<div class="px-10 lg:px-20">
+<BaseLayout>
+	<DefaultPadding>
+		<main class="py-4 lg:py-10">
 			<!-- Hero -->
-			<div>
-				<div>
-					<h2 class="text-colorfor-accent-secondary text-4xl font-semibold uppercase">1507.</h2>
-					<hr class="mt-3 h-px w-10" />
-					<h1 class="text-colorfor-text-heading mt-4 mb-2 text-5xl font-bold">
-						Árpád-házi Szent Margit Cserkészcsapat
-					</h1>
-					<p class="text-colorfor-text-heading-2 text-xl font-semibold">
-						Magyarország legnagyobb vidéki csapata Szeged város szívében.
-					</p>
-					<div class="mt-4 py-3">
-						<Button to="#" button_style="darkbutton">Hírek</Button>
-						<Button to="#" button_style="accentbutton">Kapcsolat</Button>
-					</div>
-				</div>
-				<div class="mt-6 lg:mt-10">
-					<img
-						src="csapat_foto_edited.JPG"
-						alt="Csapatunk csoportképe"
-						class="w-screen rounded-xl lg:rounded-3xl"
-					/>
-				</div>
-			</div>
+			<Hero />
 
 			<!-- Hírek/Esenények -->
-			<div
-				class="my-20 flex flex-col-reverse rounded-3xl text-center text-2xl shadow shadow-colorfor-accent-primary lg:flex lg:flex-row"
-			>
-				<div class="h-auto w-full rounded-l-3xl lg:w-1/2">
-					<iframe
-						src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBudapest&showPrint=0&mode=MONTH&showTz=0&showCalendars=0&title=%C3%81rp%C3%A1d-h%C3%A1zi%20Szent%20Margit%20Cserk%C3%A9szcsappat&src=Y18xOGI2NWdlNGN0dmprdGtkaDB2M2JwdjQxOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043"
-						style="border-width:0"
-						frameborder="0"
-						scrolling="no"
-						class="h-96 w-full rounded-b-3xl lg:h-[500px] lg:rounded-l-3xl"></iframe>
-				</div>
-				<div class="w-full rounded-t-3xl p-10 lg:w-1/2 lg:rounded-r-3xl">
-					<h2 class="mb-4 text-4xl font-bold text-colorfor-text-heading-accent">Legfrissebb híreink</h2>
-				</div>
-			</div>
-		</div>
+			<News />
 
-		<!-- Rólunk + Kapcsolat -->
-		<div class="w-auto flex-col py-10 lg:flex lg:flex-row lg:py-20">
-			<div
-				class="hidden h-[500px] w-auto bg-[url('/ors.jpg')] bg-contain bg-center bg-no-repeat sm:rounded-xl lg:block lg:w-1/2 lg:rounded-r-3xl lg:bg-cover lg:shadow-md lg:shadow-colorfor-accent-primary"
-			>
-			</div>
-			<div>
-				<img src="/ors.jpg" alt="Kép a legjobb Őrsről" class="block h-auto w-auto lg:hidden" />
-			</div>
-			<div class="w-auto p-10 lg:w-1/2 lg:p-20">
-				<h2 class="text-4xl font-semibold text-colorfor-text-heading-accent">Csapatunkról</h2>
-				<h3 class="mt-10 mb-3 text-2xl">Csapatunk története</h3>
-				<p class="text-lg">
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo laboriosam aspernatur,
-					incidunt unde ut est, aliquid recusandae nam dolor nostrum laborum tempora facilis ea
-					doloribus numquam autem consequuntur, culpa modi!
-				</p>
-				<h3 class="mt-10 mb-3 text-2xl">Kapcsolat</h3>
-				<p class="text-lg">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vero ullam ab eveniet fuga
-					explicabo?
-				</p>
-				<div class="mt-10">
-					<Button to="#" button_style="darkbutton">Kapcsolat</Button>
-					<Button to="#" button_style="accentbutton">Rólunk</Button>
-				</div>
-			</div>
-		</div>
+			<!-- Rólunk + Kapcsolat -->
+			<Rolunk />
 
-		<!-- Támogatás (Alap padding újra)-->
-		<div
-			class="lg:align-center my-0 flex flex-col px-10 lg:my-20 lg:flex lg:flex-row lg:px-20"
-		>
-			<div class="w-full p-4 lg:w-1/2 lg:p-10">
-				<h2 class="mb-4 text-4xl font-semibold text-colorfor-text-heading-accent">Támogass minket!</h2>
-				<p class="my-4 mb-2 text-lg">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste corrupti, labore
-					repellat explicabo quod in voluptate ipsam rerum veniam inventore. Repellendus aliquid est
-					officia?
-				</p>
-				<div class="py-3">
-				<Button to="#" button_style="darkbutton">Bővebben</Button>
-				</div>
-			</div>
-			<div class="flex w-auto place-self-center">
-				<img
-					src="/1szaz.jpg"
-					alt=""
-					class="ml-5 h-24 w-auto rounded-xl shadow-xl lg:h-52 lg:rounded-3xl"
-				/>
-				<img
-					src="/50.jpg"
-					alt=""
-					class="ml-5 h-24 w-auto rounded-xl shadow-xl lg:h-52 lg:rounded-3xl"
-				/>
-			</div>
-		</div>
-	</main>
-</Layout>
-
+			<!-- Támogatás (Alap padding újra)-->
+			<Tamogass />
+		</main>
+	</DefaultPadding>
+</BaseLayout>
