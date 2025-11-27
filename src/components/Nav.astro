@@ -1,147 +1,147 @@
 ---
 import { nav_items, call_to_action } from "@/data/nav_items"
-import Socials_list from "@/components/socials_list.astro"
-import Button from "@/components/application_UI/buttons/button.astro"
-import Logo from "@/components/Utilities/Logo.astro"
+import Socials_list from "@/components/Utilities/socials_list.astro"
+import Logo from "@/components/Utilities/Logo.svg"
 import DefaultPadding from "@/layouts/DefaultPadding.astro"
 ---
 
-<header class="bg-colorfor-bg-header font-nav text-xl tracking-(--heading-font-spacing)">
+<header class="bg-colorfor-bg-header font-nav text-lg tracking-(--heading-font-spacing)">
 	<DefaultPadding>
 		<div class="mx-auto">
 			<div class="flex h-32 items-center justify-between">
-
-
-					<a class="block h-32 absolute top-12 -translate-x-1/2 left-1/2 transform z-40" href={nav_items[0].link}>
-						<span class="sr-only">{nav_items[0].name}</span>
-						<div class="flex flex-row items-center">
-							<div class="text-md text-right">Kunart</div>
-							<div class="aspect-square p-1 h-24 w-24">
-								<Logo />
-							</div>
-							<div class="text-md">Portrék</div>
+				<a
+					class="absolute top-12 left-1/2 z-40 block h-32 -translate-x-1/2 transform"
+					href={nav_items[0].link}
+				>
+					<span class="sr-only">{nav_items[0].name}</span>
+					<div class="flex flex-row items-center">
+						<div class="text-base text-right">Kunart</div>
+						<div class="aspect-square h-24 w-24 p-1">
+							<Logo class="w-full h-full"/>
 						</div>
-					</a>
 
-						<div class="absolute right-8 top-4">
-							<button
-								id="mobile-menu-button"
-								class="group w-12 rounded-(--roundedness-button) p-2 transition"
-								aria-controls="mobile-menu"
-								aria-expanded="false"
-								aria-label="Toggle menu"
-							>
-								<div
-									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-10 transition-[width] duration-500 group-aria-expanded:w-12"
-								>
-								</div>
-								<div
-									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-12 transition-[width] duration-500 group-aria-expanded:w-8"
-								>
-								</div>
-								<div
-									class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-8 transition-[width] duration-500 group-aria-expanded:w-10"
-								>
-								</div>
-							</button>
+						<div class="text-base">Portrék</div>
 					</div>
+				</a>
+
+				<div class="absolute top-4 right-8">
+					<button
+						id="mobile-menu-button"
+						class="group w-12 rounded-(--roundedness-button) p-2 transition"
+						aria-controls="mobile-menu"
+						aria-expanded="false"
+						aria-label="Toggle menu"
+					>
+						<div
+							class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-10 transition-[width] duration-500 group-aria-expanded:w-12"
+						>
+						</div>
+						<div
+							class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-12 transition-[width] duration-500 group-aria-expanded:w-8"
+						>
+						</div>
+						<div
+							class="bg-colorfor-hamburgermenu-lines my-2 h-1 w-8 transition-[width] duration-500 group-aria-expanded:w-10"
+						>
+						</div>
+					</button>
 				</div>
 			</div>
 		</div>
 	</DefaultPadding>
-
-	<!-- Mobile menu-->
-	<nav id="mobile-menu" class="relative z-30 hidden transition" aria-label="Global">
-		<ul
-			id="mobile_navlist"
-			class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"
-		>
-			<li>
-				<div class="text-center">
-					<Button to={call_to_action.link} button_style="darkbutton">{call_to_action.name}</Button>
-				</div>
-			</li>
-			{
-				nav_items.map((item) => (
-					<li class="text-center">
-						<a class="hover:text-current/70" href={item.link}>
-							{" "}
-							{item.name}{" "}
-						</a>
-					</li>
-				))
-			}
-			<li class="text-center">
-				<Socials_list />
-			</li>
-		</ul>
-	</nav>
-
-	<script type="module">
-		const btn = document.getElementById("mobile-menu-button")
-		const menu = document.getElementById("mobile-menu")
-		const mobile_nav = document.getElementById("mobile_navlist")
-
-		// Ensure aria-hidden reflects initial state
-		if (menu) menu.setAttribute("aria-hidden", menu.classList.contains("hidden") ? "true" : "false")
-
-		const openMenu = () => {
-			// reveal container first so the inner element is renderable for transition
-			menu.classList.remove("hidden")
-			menu.setAttribute("aria-hidden", "false")
-			btn?.setAttribute("aria-expanded", "true")
-
-			// remove the translate on next frame so transition runs
-			requestAnimationFrame(() => {
-				mobile_nav.classList.remove("translate-x-full")
-			})
-		}
-
-		const closeMenu = () => {
-			// slide out
-			mobile_nav.classList.add("translate-x-full")
-			btn?.setAttribute("aria-expanded", "false")
-			menu.setAttribute("aria-hidden", "true")
-
-			// after the transition finishes, hide the container to remove it from the flow
-			const onTransitionEnd = (e) => {
-				if (e.target === mobile_nav) {
-					menu.classList.add("hidden")
-					mobile_nav.removeEventListener("transitionend", onTransitionEnd)
-				}
-			}
-			mobile_nav.addEventListener("transitionend", onTransitionEnd)
-		}
-
-		btn?.addEventListener("click", () => {
-			const expanded = btn.getAttribute("aria-expanded") === "true"
-			if (expanded) closeMenu()
-			else openMenu()
-		})
-
-		// Close the mobile menu when the viewport becomes >= md
-		const mq = window.matchMedia("(min-width: 768px)")
-		const handleMq = (e) => {
-			if (e.matches) {
-				// if open, gracefully close
-				if (btn?.getAttribute("aria-expanded") === "true") closeMenu()
-				else {
-					// ensure hidden state
-					menu.classList.add("hidden")
-					menu.setAttribute("aria-hidden", "true")
-					btn?.setAttribute("aria-expanded", "false")
-				}
-			}
-		}
-		if (mq.addEventListener) mq.addEventListener("change", handleMq)
-		else mq.addListener(handleMq)
-
-		// Close on Escape
-		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape" && btn?.getAttribute("aria-expanded") === "true") {
-				closeMenu()
-				btn?.focus()
-			}
-		})
-	</script>
 </header>
+
+<!-- Mobile menu-->
+<nav id="mobile-menu" class="relative z-30 hidden transition text-2xl font-heading" aria-label="Global">
+	<ul
+		id="mobile_navlist"
+		class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"
+	>
+		<li>
+			<div class="text-center">
+				<a href={call_to_action.link} class="button darkbutton" >{call_to_action.name}</a>
+			</div>
+		</li>
+		{
+			nav_items.map((item) => (
+				<li class="text-center">
+					<a class="hover:text-current/70" href={item.link}>
+						{" "}
+						{item.name}{" "}
+					</a>
+				</li>
+			))
+		}
+		<li class="text-center">
+			<Socials_list />
+		</li>
+	</ul>
+</nav>
+
+<script type="module">
+	const btn = document.getElementById("mobile-menu-button")
+	const menu = document.getElementById("mobile-menu")
+	const mobile_nav = document.getElementById("mobile_navlist")
+
+	// Ensure aria-hidden reflects initial state
+	if (menu) menu.setAttribute("aria-hidden", menu.classList.contains("hidden") ? "true" : "false")
+
+	const openMenu = () => {
+		// reveal container first so the inner element is renderable for transition
+		menu.classList.remove("hidden")
+		menu.setAttribute("aria-hidden", "false")
+		btn?.setAttribute("aria-expanded", "true")
+
+		// remove the translate on next frame so transition runs
+		requestAnimationFrame(() => {
+			mobile_nav.classList.remove("translate-x-full")
+		})
+	}
+
+	const closeMenu = () => {
+		// slide out
+		mobile_nav.classList.add("translate-x-full")
+		btn?.setAttribute("aria-expanded", "false")
+		menu.setAttribute("aria-hidden", "true")
+
+		// after the transition finishes, hide the container to remove it from the flow
+		const onTransitionEnd = (e) => {
+			if (e.target === mobile_nav) {
+				menu.classList.add("hidden")
+				mobile_nav.removeEventListener("transitionend", onTransitionEnd)
+			}
+		}
+		mobile_nav.addEventListener("transitionend", onTransitionEnd)
+	}
+
+	btn?.addEventListener("click", () => {
+		const expanded = btn.getAttribute("aria-expanded") === "true"
+		if (expanded) closeMenu()
+		else openMenu()
+	})
+
+	// Close the mobile menu when the viewport becomes >= md
+	const mq = window.matchMedia("(min-width: 768px)")
+	const handleMq = (e) => {
+		if (e.matches) {
+			// if open, gracefully close
+			if (btn?.getAttribute("aria-expanded") === "true") closeMenu()
+			else {
+				// ensure hidden state
+				menu.classList.add("hidden")
+				menu.setAttribute("aria-hidden", "true")
+				btn?.setAttribute("aria-expanded", "false")
+			}
+		}
+	}
+	if (mq.addEventListener) mq.addEventListener("change", handleMq)
+	else mq.addListener(handleMq)
+
+	// Close on Escape
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && btn?.getAttribute("aria-expanded") === "true") {
+			closeMenu()
+			btn?.focus()
+		}
+	})
+</script>

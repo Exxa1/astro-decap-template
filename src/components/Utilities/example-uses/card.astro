@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import CardImage from './images/2_Stakes.jpg';
+---
+<!-- This file shows an example use of the Card and explains it. Copy paste for use. The styling is done in the global.css -->
+
+<!-- Use fill/outline or nothing for different styles -->
+<div class="card-box outline">
+	<!-- Change the text-left to text-right if you want to switch up to the text to the right, also switch the html order so text comes first -->
+	<div class="card-text text-left"> 
+		<h2 class="text-current">Ne félj a kamerától</h2>
+		<!-- You can have whatever inside here -->
+		<p>
+			A kamera a barátod. Segít megismerni magadat, szembenézni, hogy vagy, hogy érzed magad. Egy
+			tükör. Ahhoz, hogy jól nézz ki a képeken, jól kell érezd magad a kamera előtt ülve. Ebben
+			tudok neked segíteni.
+		</p>
+		<p>
+			Ha nem mered bevállalni magad saját magadnak a kamera előtt, miként fogod ezt mások előtt
+			megtenni?
+		</p>
+	</div>
+	<!-- when you place this in front of the text to have the image on the left side, change it to justify-end -->
+	 <!-- You can also just delete this image part if you want the section without photo -->
+	<div class="card-image-div justify-start">
+		<Image src={CardImage} alt="Fear image" />
+	</div>
+</div>

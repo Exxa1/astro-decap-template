@@ -1,22 +1,22 @@
 ---
-import Button from "@/components/application_UI/buttons/button.astro"
 // Your header should be concise and include a clear CTA, along with an image that showcases your product or someone enjoying it.
 ---
 
-<div class="container px-6 py-16 mx-auto">
-        <div class="items-center lg:flex">
-            <div class="w-full lg:w-1/4 place-self-start">
-                <div class="lg:max-w-sm">
-                    <h1 class="text-2xl lg:text-2xl">Transforming Insecurity into <br> Stunning Portraits</h1>
-                    <p class="mt-3 dark:text-gray-400">Are you ready to capture your true self?</p>
-                    
+<div class="container mx-auto px-6 py-16">
+	<div class="items-center lg:flex">
+		<div class="w-full place-self-start lg:w-1/4">
+			<div class="lg:max-w-sm">
+				<h1 class="text-2xl lg:text-2xl">Transforming Insecurity into <br /> Stunning Portraits</h1>
+				<p class="mt-3 dark:text-gray-400">Are you ready to capture your true self?</p>
 
-						<div class="py-2 mt-6"><Button to="/contact" button_style="darkbutton">Book Your Session</Button> </div>
-                	</div>
-            </div>
+				<div class="mt-6 py-2">
+                    <a href="/contact" class="button darkbutton">Book Your Session</a>
+				</div>
+			</div>
+		</div>
 
-            <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-3/4">
-                <img class="w-full h-full" src="/hero.webp" alt="Confident person portrait">
-            </div>
-        </div>
-    </div>
+		<div class="mt-6 flex w-full items-center justify-center lg:mt-0 lg:w-3/4">
+			<img class="h-full w-full" src="/hero.webp" alt="Confident person portrait" />
+		</div>
+	</div>
+</div>

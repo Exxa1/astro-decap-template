@@ -1,28 +1,34 @@
 ---
-import Card from "@/components/Landing_page/card.astro"
+import { Image } from "astro:assets"
+import CardImage from "./images/5.jpg"
 ---
 
 <!-- Your plan should show customers that working with you or buying your product is easy and effortless, and best relayed in three simple steps. 3 Facv Ston -->
+<div class="card-box outline">
+	<div class="card-image-div justify-end">
+		<Image src={CardImage} alt="Fear image" />
+	</div>
+	<div class="card-text text-right">
+		<h2>3 Easy Steps to Gorgeous Portraits</h2>
+		<h3>Our simple plan makes capturing your beauty effortless.</h3>
 
-<section class="">
-    <Card card_style="outline">
-        <h2> 3 Easy Steps to Gorgeous Portraits </h2>
-        <h3>Our simple plan makes capturing your beauty effortless.</h3>
-        
-        <ol>
-            <li>
-                <h4>Contact Us</h4>
-                <p>Fill Out a Questionnaire</p>
-            </li>
-            <li>
-                <h4>Schedule a Session</h4>
-                <p>Reach out and share your interest with us.</p>
-            </li>
-            <li>
-                <h4>Find a time that works for you.</h4>
-                <p>Find a time that works for you. This helps us tailor your session perfectly.</p>
-            </li>
-        </ol>
+		<ol>
+			<li>
+				<h4>Contact Us</h4>
+				<p>Fill Out a Questionnaire</p>
+			</li>
+			<li>
+				<h4>Schedule a Session</h4>
+				<p>Reach out and share your interest with us.</p>
+			</li>
+			<li>
+				<h4>Find a time that works for you.</h4>
+				<p>Find a time that works for you. This helps us tailor your session perfectly.</p>
+			</li>
+		</ol>
 
-        </Card>
-</section>
+		<div class="text-right">
+			<a href="/contact" class="button darkbutton w-fit">Book Your Session</a>
+		</div>
+	</div>
+</div>
