@@ -92,6 +92,7 @@
 
 	--roundedness-button: var(--roundedness-default);
 	--roundedness-textinput: var(--roundedness-default);
+	--roundedness-card: var(--roundedness-default);
 
 	--color-colorfor-stroke-card: var(--color-black);
 }

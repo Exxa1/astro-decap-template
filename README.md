@@ -20,11 +20,17 @@ To change the colors go to src/styles/tailwind_theme.css and read the comments t
 To change the logo, go to the Logo.astro component and insert another svg code.
 
 ### Font
-To Change the font, first change the import in global.css, then go to src/styles/tailwind_theme.css and change the font variables.
+To Change the font, first change the import in global.css (currently uses import from Google fonts), then go to src/styles/tailwind_theme.css and change the font variables.
 
+### Markdown
 The webpage uses the tailwind typography plugin to style the markdown. The colors follow the webpage colors specified in the tailwind_theme.css file (see above) but you can also specifically change them in the src/styles/markdown_typography_plugin_colors.css file.
 
-Use can use different styled buttons from the button component, passing the style as a prop.
+### Components
+The website utilizes Tailwind components, currently stored in the global.css
+You can change the styling there for cards, buttons.
+There are example uses in the astro components under src/components/Utilities/example-uses.
+
+
 
 
 ## Pages that are only reachable by knowing the link

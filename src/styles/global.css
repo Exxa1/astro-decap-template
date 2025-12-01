@@ -55,7 +55,7 @@
 	}
 
 	.card-box {
-		@apply mx-auto my-12 flex flex-col md:flex-row;
+		@apply mx-auto my-12 flex flex-col md:flex-row rounded-(--roundedness-card);
 	}
 
 	.card-box.outline {
