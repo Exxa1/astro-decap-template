@@ -1,24 +1,28 @@
 ---
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
+
 import { Image } from "astro:assets"
 import CardImage from "./images/3.jpg"
 ---
 
 <!-- Your value proposition should communicate the value your products or services can deliver to a customer, often including icons for visual emphasis. -->
-<div class="card-box fill">
-	<div class="card-image-div justify-end">
-		<Image src={CardImage} alt="Fear image" />
-	</div>
-	<div class="card-text text-right">
-		<h2 class="text-current">Feel Empowered with Every Click</h2>
-		<h3 class="text-current">Capture portraits that reflect your best self and confidence.</h3>
+ <DefaultPadding>
+	<div class="card-box fill">
+		<div class="card-image-div justify-end">
+			<Image src={CardImage} alt="Fear image" />
+		</div>
+		<div class="card-text text-right">
+			<h2 class="text-current">Feel Empowered with Every Click</h2>
+			<h3 class="text-current">Capture portraits that reflect your best self and confidence.</h3>
 
-		<p>I do this and this</p>
+			<p>I do this and this</p>
 
-		<div>
-			<a
-				href="/contact"
-				class="button hover:bg-colorfor-accent-primary darkbutton w-fit bg-white text-black"
-				>Book Your Session</a>
+			<div>
+				<a
+					href="/contact"
+					class="button hover:bg-colorfor-accent-primary darkbutton w-fit bg-white text-black"
+					>Book Your Session</a>
+			</div>
 		</div>
 	</div>
-</div>
+</DefaultPadding>

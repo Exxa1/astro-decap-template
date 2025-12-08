@@ -1,25 +1,28 @@
 ---
+import DefaultPadding from "@/layouts/DefaultPadding.astro"
+
 import { Image } from 'astro:assets';
 import CardImage from './images/2.jpg';
 ---
 
 <!-- Your stakes section should depict what life will look like if your clients don't buy your product, and what negative experiences your product will help them avoid. -->
-
-<div class="card-box outline">
-	<div class="card-text text-left">
-		<h2 class="text-current">Ne félj a kamerától</h2>
-		<p>
-			A kamera a barátod. Segít megismerni magadat, szembenézni, hogy vagy, hogy érzed magad. Egy
-			tükör. Ahhoz, hogy jól nézz ki a képeken, jól kell érezd magad a kamera előtt ülve. Ebben
-			tudok neked segíteni.
-		</p>
-		<p>
-			Ha nem mered bevállalni magad saját magadnak a kamera előtt, miként fogod ezt mások előtt
-			megtenni?
-		</p>
-		<a href="/contact" class="button darkbutton w-fit">Book Your Session</a>
+<DefaultPadding>
+	<div class="card-box outline">
+		<div class="card-text text-left">
+			<h2 class="text-current">Ne félj a kamerától</h2>
+			<p>
+				A kamera a barátod. Segít megismerni magadat, szembenézni, hogy vagy, hogy érzed magad. Egy
+				tükör. Ahhoz, hogy jól nézz ki a képeken, jól kell érezd magad a kamera előtt ülve. Ebben
+				tudok neked segíteni.
+			</p>
+			<p>
+				Ha nem mered bevállalni magad saját magadnak a kamera előtt, miként fogod ezt mások előtt
+				megtenni?
+			</p>
+			<a href="/contact" class="button darkbutton w-fit">Book Your Session</a>
+		</div>
+		<div class="card-image-div justify-start">
+			<Image src={CardImage} alt="Fear image" />
+		</div>
 	</div>
-	<div class="card-image-div justify-start">
-		<Image src={CardImage} alt="Fear image" />
-	</div>
-</div>
+</DefaultPadding>

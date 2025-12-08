@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import ReviewImage from './images/2.jpg';
+---
+
+<div class="aspect-video overflow-hidden relative">
+    <div class="max-w-1/4">
+        <div class="absolute left-1/2 top-1/2 -translate-1/2 text-white sm:text-xl md:text-2xl lg:text-3xl z-30 pr-6">
+            <div class="text-shadow-lg">Looking at your photos what goes great Looking at your photos what goes great</div>
+            <div class="text-shadow-lg text-center">- Someone Else</div>
+            <div class="text-shadow-lg text-center text-sm">★★★★★</div>
+        </div>
+        <Image class="absolute -top-1/2" src={ReviewImage} alt="Great photos that got amazing reviews" />
+    </div>
+</div>
