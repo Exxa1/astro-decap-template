@@ -79,69 +79,59 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 </nav>
 
 <script type="module">
-	const btn = document.getElementById("mobile-menu-button")
-	const menu = document.getElementById("mobile-menu")
-	const mobile_nav = document.getElementById("mobile_navlist")
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Select the necessary elements
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavList = document.getElementById('mobile_navlist');
 
-	// Ensure aria-hidden reflects initial state
-	if (menu) menu.setAttribute("aria-hidden", menu.classList.contains("hidden") ? "true" : "false")
+    // Simple function to toggle the menu state
+    const toggleMenu = () => {
+        // Determine the current state based on the aria-expanded attribute
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        
+        // 2. Toggle the button's aria-expanded state
+        menuButton.setAttribute('aria-expanded', String(!isExpanded));
 
-	const openMenu = () => {
-		// reveal container first so the inner element is renderable for transition
-		menu.classList.remove("hidden")
-		menu.setAttribute("aria-hidden", "false")
-		btn?.setAttribute("aria-expanded", "true")
+        // 3. Toggle the display property of the main menu wrapper
+        // We do this first to make sure the nav is visible before the slide animation starts
+        // and hidden after it completes.
+        if (!isExpanded) {
+            // SHOW MENU
+            mobileMenu.classList.remove('hidden');
+            // Allow the browser a moment to apply 'display: block' before triggering the transition
+            // using the timeout ensures the CSS transition fires correctly.
+            setTimeout(() => {
+                mobileNavList.classList.remove('translate-x-full');
+            }, 10); // A small delay is usually enough
+        } else {
+            // HIDE MENU - Start the slide-out transition
+            mobileNavList.classList.add('translate-x-full');
 
-		// remove the translate on next frame so transition runs
-		requestAnimationFrame(() => {
-			mobile_nav.classList.remove("translate-x-full")
-		})
-	}
+            // Wait for the CSS transition to finish (duration is 300ms) before hiding the element
+            mobileNavList.addEventListener('transitionend', function handler() {
+                mobileMenu.classList.add('hidden');
+                // Crucially, remove the event listener after it runs once
+                mobileNavList.removeEventListener('transitionend', handler);
+            }, { once: true });
+        }
+    };
 
-	const closeMenu = () => {
-		// slide out
-		mobile_nav.classList.add("translate-x-full")
-		btn?.setAttribute("aria-expanded", "false")
-		menu.setAttribute("aria-hidden", "true")
-
-		// after the transition finishes, hide the container to remove it from the flow
-		const onTransitionEnd = (e) => {
-			if (e.target === mobile_nav) {
-				menu.classList.add("hidden")
-				mobile_nav.removeEventListener("transitionend", onTransitionEnd)
-			}
-		}
-		mobile_nav.addEventListener("transitionend", onTransitionEnd)
-	}
-
-	btn?.addEventListener("click", () => {
-		const expanded = btn.getAttribute("aria-expanded") === "true"
-		if (expanded) closeMenu()
-		else openMenu()
-	})
-
-	// Close the mobile menu when the viewport becomes >= md
-	const mq = window.matchMedia("(min-width: 768px)")
-	const handleMq = (e) => {
-		if (e.matches) {
-			// if open, gracefully close
-			if (btn?.getAttribute("aria-expanded") === "true") closeMenu()
-			else {
-				// ensure hidden state
-				menu.classList.add("hidden")
-				menu.setAttribute("aria-hidden", "true")
-				btn?.setAttribute("aria-expanded", "false")
-			}
-		}
-	}
-	if (mq.addEventListener) mq.addEventListener("change", handleMq)
-	else mq.addListener(handleMq)
-
-	// Close on Escape
-	document.addEventListener("keydown", (e) => {
-		if (e.key === "Escape" && btn?.getAttribute("aria-expanded") === "true") {
-			closeMenu()
-			btn?.focus()
-		}
-	})
+    // 4. Attach the event listener to the button
+    if (menuButton) {
+        menuButton.addEventListener('click', toggleMenu);
+    }
+    
+    // OPTIONAL: Close menu when a link inside the nav is clicked
+    // This provides a better user experience on mobile devices.
+    const navLinks = mobileNavList.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Check if the menu is open before trying to close it
+            if (menuButton.getAttribute('aria-expanded') === 'true') {
+                toggleMenu();
+            }
+        });
+    });
+});
 </script>
