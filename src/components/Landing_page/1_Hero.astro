@@ -4,21 +4,21 @@ import { Image } from 'astro:assets';
 import HeroImage from './images/hero.webp'
 ---
 
-<div class="container mx-auto px-6 py-16">
-	<div class="items-center lg:flex">
-		<div class="w-full place-self-start lg:w-1/4">
-			<div class="lg:max-w-sm">
-				<h1 class="text-2xl lg:text-2xl">Transforming Insecurity into <br /> Stunning Portraits</h1>
-				<p class="mt-3 dark:text-gray-400">Are you ready to capture your true self?</p>
+<div class="mx-auto pb-16">
+	<div class="relative">
+		<div class="absolute flex w-full h-full">
+			<div class="flex flex-col items-center justify-center h-full w-full">
+				<h1 class="text-3xl lg:text-5xl text-center text-white text-shadow-md">Profi fotók, amiken végre azt látod: <br /> Ez vagyok én</h1>
+				<!-- <p class="mt-3 dark:text-gray-400">Are you ready to capture your true self?</p> -->
 
 				<div class="mt-6 py-2">
-                    <a href="/contact" class="button darkbutton">Book Your Session</a>
+					<a href="/contact" class="button darkbutton">Foglalj időpontot</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="mt-6 flex w-full items-center justify-center lg:mt-0 lg:w-3/4">
-			<Image class="h-full w-full" src={HeroImage} alt="Confident person portrait" />
+		<div class="mt-6 flex w-full items-center justify-center lg:mt-0">
+			<Image class="h-svh w-full object-cover" src={HeroImage} alt="Confident person portrait" />
 		</div>
 	</div>
 </div>

@@ -55,7 +55,7 @@ NB: Additional color themes can also be configured on the `src/data/theme.ts` fi
 
 ## 🥷 Usage
 
-- You can modify all the information in the files in the `data` folder (presentation, social links, projects list, colors).
+- You can modify all the information in the files in the `data` folder (presentation, social links, colors).
 - You can write articles in `markdown` format in the `content/posts` folder.
 - deploy to netlify
 - setup authentication for GithHub
