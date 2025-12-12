@@ -6,18 +6,18 @@ layout: ../../layouts/BasicMarkdown.astro
 
 # Adatkezelési Tájékoztató
 
-**_[Saját Név E.V.] Fotós Szolgáltatás_**
+**_Kuna Áron E.V. Fotós Szolgáltatás_**
 
-**Hatálybalépés dátuma:** 2025. [Aktuális Dátum]
+**Hatálybalépés dátuma:** 2025. Dec. 11.
 
 ### I. Az Adatkezelő és Elérhetőségei
 
 |**Elem**|**Tartalom**|
 |---|---|
-|**Adatkezelő (Te)**|[Saját Név E.V.]|
-|**Székhely**|[Szegedi Cím]|
-|**E-mail**|[info@domaincimed.hu]|
-|**Nyilvántartási szám**|[E.V. Nyilvántartási szám]|
+|**Adatkezelő**|Kuna Áron E.V.|
+|**Székhely**|6762 Sándorfalva, Fürj utca 15|
+|**E-mail**|photography@aronkuna.com|
+|**Nyilvántartási szám**|60152639|
 
 ### II. Az Adatkezelés Céljai és Jogalapjai
 

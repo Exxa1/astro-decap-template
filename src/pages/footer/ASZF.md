@@ -5,21 +5,21 @@ layout: ../../layouts/BasicMarkdown.astro
 ---
 
 
-## ÁLTALÁNOS SZERZŐDÉSI FELTÉTELEK (ÁSZF) – MINTA
+## ÁLTALÁNOS SZERZŐDÉSI FELTÉTELEK (ÁSZF)
 
-**_[Saját Név E.V.] Fotós Szolgáltatásokra vonatkozóan_**
+**_Kuna Áron Fotós Szolgáltatásokra vonatkozóan_**
 
 ### I. Általános Rendelkezések
 
 **1. A Szolgáltató Adatai:**
 
-- **Neve:** [Saját Név E.V.]
+- **Neve:** Kuna Áron E.V.
     
-- **Székhelye:** [Pontos Szegedi Cím]
+- **Székhelye:** 6762 Sándorfalva, Fürj utca 15.
     
-- **Elérhetőség:** [info@domaincimed.hu], [Telefonszám]
+- **Elérhetőség:** photography@aronkuna.com
     
-- **Nyilvántartási szám:** [E.V. Nyilvántartási szám] (További adatok az Impresszumban.)
+- **Nyilvántartási szám:** 60152639 (További adatok az Impresszumban.)
     
 
 2. A Szerződés Tárgya:
@@ -112,4 +112,4 @@ Tekintettel arra, hogy a szolgáltatás a Kliens kifejezett kérésére egyedi i
 
 _Jelen ÁSZF a Szolgáltató által készített szerződések elválaszthatatlan részét képezi._
 
-**Dátum:** 2025. [Hónap] [Nap], Szeged.
+**Dátum:** 2025. Dec. 11. Szeged.

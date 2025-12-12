@@ -17,16 +17,16 @@ type Props = {
 
 const { title, description, noindex, og } = Astro.props;
 
-const DEFAULT_TITLE_PAGE = "1507 ASZMCSCS";
+const DEFAULT_TITLE_PAGE = "Kunart Portrék - Kuna Áron";
 const DEFAULT_DESCRIPTION_PAGE =
-  "Magyarország legnagyobb vidéki cserkészcsapata Szeged város szívében";
+  "Ismerd meg a benned rejlő potenciált a kamera előtt.";
 const DEFAULT_URL_SITE = SITE_URL;
 
 const openGraph = {
   title: og?.title || DEFAULT_TITLE_PAGE,
   type: og?.type || "website",
   image: og?.image || "/opengraph-image.jpg",
-  alt: og?.alt || "astro starter image",
+  alt: og?.alt || "Kunart fotográfia kép",
   url: DEFAULT_URL_SITE,
   description: og?.description || DEFAULT_DESCRIPTION_PAGE,
 };

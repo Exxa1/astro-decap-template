@@ -1,15 +1,19 @@
 ---
-import { Image } from 'astro:assets';
-import ReviewImage from './images/reviews/review.jpg';
+import { Image } from "astro:assets"
+import ReviewImage from "./images/reviews/review.jpg"
 ---
 
-<div class="aspect-video overflow-hidden relative">
-    <div class="max-w-1/4">
-        <div class="absolute left-2 top-1/2 -translate-top-1/2 text-white sm:text-xl md:text-2xl lg:text-3xl z-30 pr-6">
-            <div class="text-shadow-lg">Nagyon élveztem, egyfajta új önkifejezési módra leltem rá</div>
-            <div class="text-shadow-lg text-right">- Lilla</div>
-            <div class="text-shadow-lg text-center text-xs">★★★★★</div>
-        </div>
-        <Image class="absolute" src={ReviewImage} alt="Great photos that got amazing reviews" />
-    </div>
+<div class="relative aspect-video overflow-hidden">
+		<div
+			class="absolute w-full max-w-[700px] top-1/2 left-1/2 z-30 -translate-1/2 p-2 text-white sm:text-xl md:text-2xl lg:text-3xl"
+		>
+			<div class="text-shadow-lg text-center">
+				Ami segített, hogy nem az a legfontosabb, hogy kívülről hogy nézel ki, hanem az, ahogyan
+				érzed magad, és ez meg fog látszani a képen is. Valamint, hogy nem kell feltétlenül
+				mosolyogni a képeken. Én nagyon élveztem, egyfajta új önkifejezési módra leltem rá.
+			</div>
+			<div class="text-right text-shadow-lg">- Lilla</div>
+			<div class="text-center text-xs text-shadow-lg">★★★★★</div>
+		</div>
+		<Image class="absolute" src={ReviewImage} alt="Great photos that got amazing reviews" />
 </div>

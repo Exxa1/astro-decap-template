@@ -15,16 +15,20 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 				>
 					<span class="sr-only">{nav_items[0].name}</span>
 					<div class="flex flex-row items-center">
-						<div class="text-base text-right">Kunart</div>
+						<div class="text-right text-base">Kunart</div>
 						<div class="aspect-square h-24 w-24 p-1">
-							<Logo class="w-full h-full"/>
+							<Logo class="h-full w-full" />
 						</div>
 
 						<div class="text-base">Portrék</div>
 					</div>
 				</a>
 
-				<div class="absolute top-4 right-8">
+				<div class="absolute top-4 right-8 flex flex-row">
+					<div class="p-2 pt-4 text-center">
+						<a href={call_to_action.link} class="button darkbutton">{call_to_action.name}</a>
+					</div>
+
 					<button
 						id="mobile-menu-button"
 						class="group w-12 rounded-(--roundedness-button) p-2 transition"
@@ -52,16 +56,15 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 </header>
 
 <!-- Mobile menu-->
-<nav id="mobile-menu" class="relative z-30 hidden transition text-2xl font-heading" aria-label="Global">
+<nav
+	id="mobile-menu"
+	class="font-heading relative z-30 hidden text-2xl transition"
+	aria-label="Global"
+>
 	<ul
 		id="mobile_navlist"
 		class="bg-colorfor-bg-page absolute flex h-screen w-full translate-x-full flex-col justify-evenly pb-32 transition-transform duration-300 ease-in-out"
 	>
-		<li>
-			<div class="text-center">
-				<a href={call_to_action.link} class="button darkbutton" >{call_to_action.name}</a>
-			</div>
-		</li>
 		{
 			nav_items.map((item) => (
 				<li class="text-center">
@@ -72,6 +75,11 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 				</li>
 			))
 		}
+		<li>
+			<div class="p-2 text-center">
+				<a href={call_to_action.link} class="button darkbutton">{call_to_action.name}</a>
+			</div>
+		</li>
 		<li class="text-center">
 			<Socials_list />
 		</li>
@@ -79,59 +87,63 @@ import DefaultPadding from "@/layouts/DefaultPadding.astro"
 </nav>
 
 <script type="module">
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Select the necessary elements
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileNavList = document.getElementById('mobile_navlist');
+	document.addEventListener("DOMContentLoaded", () => {
+		// 1. Select the necessary elements
+		const menuButton = document.getElementById("mobile-menu-button")
+		const mobileMenu = document.getElementById("mobile-menu")
+		const mobileNavList = document.getElementById("mobile_navlist")
 
-    // Simple function to toggle the menu state
-    const toggleMenu = () => {
-        // Determine the current state based on the aria-expanded attribute
-        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-        
-        // 2. Toggle the button's aria-expanded state
-        menuButton.setAttribute('aria-expanded', String(!isExpanded));
+		// Simple function to toggle the menu state
+		const toggleMenu = () => {
+			// Determine the current state based on the aria-expanded attribute
+			const isExpanded = menuButton.getAttribute("aria-expanded") === "true"
 
-        // 3. Toggle the display property of the main menu wrapper
-        // We do this first to make sure the nav is visible before the slide animation starts
-        // and hidden after it completes.
-        if (!isExpanded) {
-            // SHOW MENU
-            mobileMenu.classList.remove('hidden');
-            // Allow the browser a moment to apply 'display: block' before triggering the transition
-            // using the timeout ensures the CSS transition fires correctly.
-            setTimeout(() => {
-                mobileNavList.classList.remove('translate-x-full');
-            }, 10); // A small delay is usually enough
-        } else {
-            // HIDE MENU - Start the slide-out transition
-            mobileNavList.classList.add('translate-x-full');
+			// 2. Toggle the button's aria-expanded state
+			menuButton.setAttribute("aria-expanded", String(!isExpanded))
 
-            // Wait for the CSS transition to finish (duration is 300ms) before hiding the element
-            mobileNavList.addEventListener('transitionend', function handler() {
-                mobileMenu.classList.add('hidden');
-                // Crucially, remove the event listener after it runs once
-                mobileNavList.removeEventListener('transitionend', handler);
-            }, { once: true });
-        }
-    };
+			// 3. Toggle the display property of the main menu wrapper
+			// We do this first to make sure the nav is visible before the slide animation starts
+			// and hidden after it completes.
+			if (!isExpanded) {
+				// SHOW MENU
+				mobileMenu.classList.remove("hidden")
+				// Allow the browser a moment to apply 'display: block' before triggering the transition
+				// using the timeout ensures the CSS transition fires correctly.
+				setTimeout(() => {
+					mobileNavList.classList.remove("translate-x-full")
+				}, 10) // A small delay is usually enough
+			} else {
+				// HIDE MENU - Start the slide-out transition
+				mobileNavList.classList.add("translate-x-full")
 
-    // 4. Attach the event listener to the button
-    if (menuButton) {
-        menuButton.addEventListener('click', toggleMenu);
-    }
-    
-    // OPTIONAL: Close menu when a link inside the nav is clicked
-    // This provides a better user experience on mobile devices.
-    const navLinks = mobileNavList.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // Check if the menu is open before trying to close it
-            if (menuButton.getAttribute('aria-expanded') === 'true') {
-                toggleMenu();
-            }
-        });
-    });
-});
+				// Wait for the CSS transition to finish (duration is 300ms) before hiding the element
+				mobileNavList.addEventListener(
+					"transitionend",
+					function handler() {
+						mobileMenu.classList.add("hidden")
+						// Crucially, remove the event listener after it runs once
+						mobileNavList.removeEventListener("transitionend", handler)
+					},
+					{ once: true }
+				)
+			}
+		}
+
+		// 4. Attach the event listener to the button
+		if (menuButton) {
+			menuButton.addEventListener("click", toggleMenu)
+		}
+
+		// OPTIONAL: Close menu when a link inside the nav is clicked
+		// This provides a better user experience on mobile devices.
+		const navLinks = mobileNavList.querySelectorAll("a")
+		navLinks.forEach((link) => {
+			link.addEventListener("click", () => {
+				// Check if the menu is open before trying to close it
+				if (menuButton.getAttribute("aria-expanded") === "true") {
+					toggleMenu()
+				}
+			})
+		})
+	})
 </script>
